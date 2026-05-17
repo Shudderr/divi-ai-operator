@@ -25,11 +25,37 @@ Use this file to quickly navigate the knowledge base. When starting a Claude ses
 | `site-map.md` | This file - navigation and structure overview | ✅ Current |
 | `KB_ARTICLE_TEMPLATE.md` | Template for creating new documentation files | ✅ Active |
 | `DIVI5_SECTION_TEMPLATE.json` | JSON scaffold for building new sections | ✅ Active |
+| `PROJECT.md` | Canonical project identity for the Simplicity Tech Divi AI Operator | Active |
+| `STATE.md` | Living project state and current priorities | Active |
+| `HANDOFF.md` | Continuity notes for future AI sessions and contributors | Active |
+| `AI_WORKFLOW.md` | Operational contract for AI systems | Active |
+| `CHANGELOG.md` | Meaningful project milestone history | Active |
 
 ---
 
 ## 📂 Directory Structure
 y
+### `/operator/` - AI Operator Governance
+
+**Purpose:** Executive layer for the Simplicity Tech Divi AI Operator
+
+**Files:**
+- `README.md` - Operator layer overview
+- `operator-system.md` - Core identity and behaviour
+- `source-priority.md` - Source hierarchy
+- `safety-rules.md` - Staging, approval, global edit, and QA rules
+- `task-routing.md` - Route request types to existing KB docs
+- `browser-automation.md` - Browser/Codex/Chrome governance
+- `memory.md` - Living operational memory
+
+**When to use:**
+- Before AI-assisted project work
+- When deciding which KB files to read
+- Before browser automation
+- Before high-risk edits or publish workflows
+
+---
+
 ### `/audits/` - Quality Assurance Checklists
 
 **Purpose:** Modular audit system for reviewing Divi 5 sites

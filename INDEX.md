@@ -9,12 +9,28 @@
 - [BUILD_STANDARDS](./build/): The modular "Bible" for Divi 5 mechanics
 - [DIVI5_SECTION_TEMPLATE.json](./DIVI5_SECTION_TEMPLATE.json): JSON Scaffold for building sections
 - [KB_ARTICLE_TEMPLATE.md](./KB_ARTICLE_TEMPLATE.md): Template for writing new KB articles
+- [operator/README.md](./operator/README.md): AI operator governance, task routing, safety rules, and browser automation boundaries
 - [README.md](./README.md): Knowledge base overview and usage guide
 - [quick-reference.md](./quick-reference.md): Quick lookup for common solutions
 
 ---
 
-## 🎨 Core Features (`./features/`)
+## AI Operator Layer (`./operator/`)
+*Executive governance for the Simplicity Tech Divi AI Operator*
+
+| File | Purpose |
+| :--- | :--- |
+| **[README.md](./operator/README.md)** | Operator layer overview and required read order |
+| **[operator-system.md](./operator/operator-system.md)** | Core identity, behaviour, and operating method |
+| **[source-priority.md](./operator/source-priority.md)** | Internal > official Divi > community source hierarchy |
+| **[safety-rules.md](./operator/safety-rules.md)** | Staging-first, approval, global edit, and QA rules |
+| **[task-routing.md](./operator/task-routing.md)** | Route common request types to existing KB docs |
+| **[browser-automation.md](./operator/browser-automation.md)** | Codex/Chrome/browser automation governance |
+| **[memory.md](./operator/memory.md)** | Living operational memory and lessons learned |
+
+---
+
+## Core Features (`./features/`)
 *Essential Divi 5 features and systems*
 
 ### Design System Foundation

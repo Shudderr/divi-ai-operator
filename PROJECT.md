@@ -12,7 +12,7 @@ The Simplicity Tech Divi AI Operator is an AI-operable development system for bu
 
 This project is not a generic AI website builder. It is designed to act like a trained internal Divi developer/operator for Simplicity Tech: cautious, documentation-driven, pattern-aware, and consistent with established standards.
 
-The existing Divi 5 knowledge base remains the core knowledge system. New AI governance files and future operator files sit on top of that knowledge base to control how AI systems use it.
+The existing Divi 5 knowledge base remains the core knowledge system. AI governance files and the `operator/` layer sit on top of that knowledge base to control how AI systems use it.
 
 ---
 
@@ -34,7 +34,7 @@ The system should speed up production while preserving consistency and safety.
 
 ## Architecture Philosophy
 
-This repository has three intended layers:
+This repository has four intended layers:
 
 ### 1. Knowledge Layer
 
@@ -50,9 +50,9 @@ The existing knowledge base:
 
 This layer contains Divi knowledge, standards, workflows, audits, troubleshooting guidance, and reusable references.
 
-### 2. Governance And Operator Layer
+### 2. Continuity And Governance Layer
 
-The governance layer defines how AI systems should operate inside the repository. The first root-level files are:
+The continuity and governance layer defines project identity, state, handoff, AI workflow rules, and milestone history:
 
 - `PROJECT.md`
 - `STATE.md`
@@ -60,9 +60,17 @@ The governance layer defines how AI systems should operate inside the repository
 - `AI_WORKFLOW.md`
 - `CHANGELOG.md`
 
-A future `operator/` folder should add more detailed orchestration, source priority, task routing, safety rules, browser automation rules, and operational memory.
+### 3. Operator Layer
 
-### 3. Execution And Browser Layer
+The `operator/` folder provides detailed orchestration:
+
+- Source priority.
+- Task routing.
+- Safety rules.
+- Browser automation boundaries.
+- Operational memory.
+
+### 4. Execution And Browser Layer
 
 Future browser/Codex/Chrome automation should be treated as an execution, QA, and repetitive-action layer.
 
@@ -108,4 +116,3 @@ The Simplicity Tech Divi AI Operator should behave like a cautious senior intern
 - Preserve responsive settings and existing design systems.
 - Report what changed and what still needs review.
 - Ask for approval before high-impact actions.
-

@@ -17,6 +17,15 @@ This file should track architectural decisions, governance additions, operator-l
   - `HANDOFF.md`
   - `AI_WORKFLOW.md`
   - `CHANGELOG.md`
+- Added the `operator/` executive layer:
+  - `operator/README.md`
+  - `operator/operator-system.md`
+  - `operator/source-priority.md`
+  - `operator/safety-rules.md`
+  - `operator/task-routing.md`
+  - `operator/browser-automation.md`
+  - `operator/memory.md`
+- Added `.gitattributes` to keep Markdown line endings stable.
 
 ### Established
 
@@ -28,12 +37,9 @@ This file should track architectural decisions, governance additions, operator-l
   - Execution/browser layer.
 - Established that browser automation is a future execution and QA layer, not the primary intelligence layer.
 - Established additive, minimal-change development as the default approach.
+- Established task routing, source priority, safety rules, browser automation governance, and operator memory as the first operator-layer controls.
 
 ### Deferred
 
-- Creation of the future `operator/` folder.
-- Browser automation governance details.
-- Task routing matrix.
-- Persistent operator memory.
 - Cleanup of stale references and naming drift.
-
+- Snippets, layouts, and QA supporting libraries.

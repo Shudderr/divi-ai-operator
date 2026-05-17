@@ -23,6 +23,10 @@ A production-ready knowledge base covering **95% of the Divi 5 development lifec
 
 ## 🚀 Quick Start
 
+### AI Operator Users
+
+Start with [`operator/README.md`](./operator/README.md) for source priority, task routing, safety rules, browser automation boundaries, and operational memory.
+
 ### For Claude AI Users
 
 **Starting a conversation:**
@@ -66,6 +70,7 @@ A production-ready knowledge base covering **95% of the Divi 5 development lifec
 
 ```
 divi-knowledge-base/
+├── operator/ (AI operator governance and routing)
 ├── INDEX.md ⭐ (start here)
 ├── README.md (this file)
 ├── quick-reference.md (quick answers)
