@@ -6,6 +6,25 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 2)
+
+Added eight practical task examples to `operator/task-routing.md`:
+
+- Build a new homepage hero section.
+- Fix a mobile spacing or overflow issue.
+- Improve page speed or LCP.
+- Audit an existing page.
+- Add or reuse a Divi template or layout.
+- Troubleshoot a Divi module or preset issue.
+- Prepare a page for deployment.
+- Review a client site for visual polish.
+
+Each example routes to existing KB docs and includes: docs to read first, expected operator behaviour, safety checks, and output/reporting expectations.
+
+Updated `HANDOFF.md` and `STATE.md` to reflect the completed examples and current operator usability level.
+
+---
+
 ## 2026-05-18
 
 ### Added

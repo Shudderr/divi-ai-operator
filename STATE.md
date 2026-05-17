@@ -126,6 +126,8 @@ Do not perform broad cleanup without a focused scope and reviewable diff.
 
 ## Next Recommended Step
 
-Review whether the operator layer needs more detailed task examples before adding snippets, layouts, or QA support folders.
+The operator layer is now usable. `operator/task-routing.md` includes eight practical worked examples for the most common Divi task types.
+
+The next additions should be demand-driven: snippets, layouts, QA folders, or expanded memory notes as real work creates the need.
 
 Do not restructure existing KB folders.

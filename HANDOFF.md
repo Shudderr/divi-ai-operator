@@ -16,7 +16,7 @@ The immediate continuity/governance phase is complete, and the initial `operator
 
 ## Current Active Objective
 
-Use the new operator layer as the executive system for future AI-assisted work:
+Use the operator layer as the executive system for AI-assisted work:
 
 - Source priority.
 - Task routing.
@@ -24,11 +24,17 @@ Use the new operator layer as the executive system for future AI-assisted work:
 - Browser automation boundaries.
 - Operational memory.
 
+The `operator/task-routing.md` file now includes eight concrete worked examples that show the operator how to handle the most common Divi task types end-to-end.
+
 ---
 
 ## Recommended Next Task
 
-Review the new `operator/` docs, then run a focused cleanup pass for stale references and naming drift if approved.
+The operator layer is now usable for real work. The next meaningful additions would be:
+
+- Snippets, layouts, or QA supporting libraries (when a concrete need arises).
+- Expanding `operator/memory.md` with real recurring issues as they are encountered.
+- Browser automation groundwork when that phase is ready.
 
 Do not automate Divi directly yet.
 
