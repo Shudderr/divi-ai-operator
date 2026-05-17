@@ -31,7 +31,7 @@ Start with [`operator/README.md`](./operator/README.md) for source priority, tas
 
 **Starting a conversation:**
 ```
-"Claude, check my Divi 5 KB at F:\Local Sites\divi-knowledge-base\"
+"Claude, check my Divi 5 KB at C:\Claude Projects\divi-knowledge-base\"
 "Read INDEX.md to see what's available"
 ```
 
@@ -384,7 +384,7 @@ build/04_divi5_workflow.md - Build process
 
 **File path:**
 ```
-F:\Local Sites\divi-knowledge-base\
+C:\Claude Projects\divi-knowledge-base\
 ```
 
 ---

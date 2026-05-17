@@ -485,7 +485,7 @@ Divi-5-Resources/
 
 ## My Custom Template Library
 
-**Storage Location:** `F:\Divi-Templates\Custom\`
+**Storage Location:** Within this knowledge base project (`C:\Claude Projects\divi-knowledge-base\`)
 
 ### Simplicity Technologies Design System
 

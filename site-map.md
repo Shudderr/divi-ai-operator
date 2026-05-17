@@ -9,7 +9,7 @@
 
 ## 📁 Quick Navigation
 
-**Location:** `F:\Local Sites\divi-knowledge-base\`
+**Location:** `C:\Claude Projects\divi-knowledge-base\`
 
 Use this file to quickly navigate the knowledge base. When starting a Claude session, reference this to understand the complete structure.
 
@@ -221,10 +221,8 @@ Each problem includes:
 - Building template library
 
 **Your custom templates:**
-```
-Storage: F:\Divi-Templates\Custom\
-Documented in template-library.md under "My Custom Template Library"
-```
+
+Documented in [template-library.md](./resources/template-library.md) under "My Custom Template Library".
 
 ---
 
