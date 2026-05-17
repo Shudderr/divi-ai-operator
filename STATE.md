@@ -106,11 +106,11 @@ Those should be additive only and should reference the existing KB rather than d
 
 Known risks:
 
-- Some docs still refer to "Claude", "Claude Code", or generic AI language instead of the unified identity "Simplicity Tech Divi AI Operator".
-- Some stale references point to nonexistent folder concepts such as `design-system/`, `accessibility/`, `design-patterns/`, or `client-work/`.
-- At least one relative Markdown link was previously identified as broken: `build/02_divi5_mechanics.md` references `../design-system/global-variable-strategy.md`.
+- Tool-specific references to ChatGPT, Codex, and Claude remain only where they describe supported AI tools or the local folder path.
+- A focused cleanup pass replaced known stale folder references to older planned folders with current KB equivalents.
+- The previously identified broken Markdown link in `build/02_divi5_mechanics.md` has been fixed.
 - Some docs contain older planning notes that may not match the current architecture.
-Do not perform broad cleanup until the governance layer is established.
+Do not perform broad cleanup without a focused scope and reviewable diff.
 
 ---
 
@@ -119,13 +119,13 @@ Do not perform broad cleanup until the governance layer is established.
 1. Preserve the existing KB architecture.
 2. Use the `operator/` layer as the executive layer for AI work.
 3. Keep browser automation governed by `operator/browser-automation.md`.
-4. Later, clean stale references and naming drift in a controlled pass.
-5. Add snippets/layouts/QA libraries only when there is a concrete need.
+4. Add snippets/layouts/QA libraries only when there is a concrete need.
+5. Keep future documentation cleanup focused and reviewable.
 
 ---
 
 ## Next Recommended Step
 
-Run a focused cleanup pass for stale references and naming drift, after confirming the operator layer content is accepted.
+Review whether the operator layer needs more detailed task examples before adding snippets, layouts, or QA support folders.
 
 Do not restructure existing KB folders.

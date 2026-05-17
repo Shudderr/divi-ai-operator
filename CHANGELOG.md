@@ -41,5 +41,10 @@ This file should track architectural decisions, governance additions, operator-l
 
 ### Deferred
 
-- Cleanup of stale references and naming drift.
 - Snippets, layouts, and QA supporting libraries.
+
+### Cleaned Up
+
+- Fixed the broken `build/02_divi5_mechanics.md` Markdown link to the old `design-system/` folder.
+- Replaced clear stale references to nonexistent `design-system/`, `accessibility/`, `design-patterns/`, and `client-work/` paths with current KB equivalents.
+- Standardised obvious AI naming drift to "Simplicity Tech Divi AI Operator" where the text referred to this project's operator behaviour.

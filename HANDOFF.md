@@ -71,9 +71,8 @@ Do:
 
 Not yet completed:
 
-- Cleanup of stale references.
-- Naming consistency pass from "Claude/Claude Code" to "Simplicity Tech Divi AI Operator".
 - Snippets/layouts/QA supporting libraries.
+- Any further naming cleanup should be limited to clear project/operator references, not tool-specific mentions.
 
 ---
 

@@ -106,7 +106,7 @@ Benefits:
 - Maintains consistency
 - Speeds up future page building
 
-Reference: features/stacked-presets-advanced.md
+Reference: features/preset-system-complete.md
 ```
 
 ---
@@ -245,7 +245,7 @@ But module also has local settings:
 
 ## 📝 Response Style Guide
 
-**How Claude Code should communicate audit findings:**
+**How the Simplicity Tech Divi AI Operator should communicate audit findings:**
 
 ### ✅ DO:
 
@@ -288,7 +288,7 @@ But module also has local settings:
 
 **5. Reference Knowledge Base**
 ```
-✓ Good: "See design-system/color-contrast-wcag.md for detailed contrast guidance"
+✓ Good: "See audits/01_UX_VISUAL.md for detailed contrast guidance"
 
 ✗ Bad: No reference to additional resources
 ```
@@ -370,7 +370,7 @@ I've reviewed your homepage using the Divi 5 Inspector. Here's what I found:
 
    Result: New ratio 4.6:1 ✓ Passes WCAG AA
 
-   Reference: design-system/color-contrast-wcag.md
+   Reference: audits/01_UX_VISUAL.md
    Related: audits/01_UX_VISUAL.md
 
 2. Mobile Touch Targets Too Small
@@ -433,7 +433,7 @@ I've reviewed your homepage using the Divi 5 Inspector. Here's what I found:
    - Guaranteed consistency
    - Easier client handoffs
 
-   Reference: design-system/global-variable-strategy.md
+   Reference: features/design-variables.md
    Related: audits/04_DIVI5_LOGIC.md
 
 4. Typography Scale Inconsistent
@@ -466,7 +466,7 @@ I've reviewed your homepage using the Divi 5 Inspector. Here's what I found:
    Implementation:
    Create global presets for each heading level
 
-   Reference: design-system/typography-scales.md
+   Reference: build/01_system_setup.md
    Related: audits/01_UX_VISUAL.md
 
 5. Spacing Values Not Systematic
@@ -488,7 +488,7 @@ I've reviewed your homepage using the Divi 5 Inspector. Here's what I found:
    - Card padding: md (24px) consistently
    - Button padding: sm (16px) consistently
 
-   Reference: design-system/spacing-system.md
+   Reference: build/01_system_setup.md
    Related: audits/01_UX_VISUAL.md
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -547,7 +547,7 @@ I've reviewed your homepage using the Divi 5 Inspector. Here's what I found:
    - Train client to use the preset
    - Smaller JSON file size
 
-   Reference: features/stacked-presets-advanced.md
+   Reference: features/preset-system-complete.md
    Related: audits/04_DIVI5_LOGIC.md
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -587,9 +587,9 @@ For detailed guidance:
 - audits/02_PERFORMANCE.md (LCP, image optimization)
 - audits/03_ACCESSIBILITY.md (WCAG, keyboard nav)
 - audits/04_DIVI5_LOGIC.md (Inspector, presets, globals)
-- design-system/color-contrast-wcag.md
-- design-system/global-variable-strategy.md
-- features/stacked-presets-advanced.md
+- audits/01_UX_VISUAL.md
+- features/design-variables.md
+- features/preset-system-complete.md
 ```
 
 ---
@@ -634,9 +634,8 @@ For detailed guidance:
 ---
 
 **Related Files:**
-- `features/stacked-presets-advanced.md`
-- `features/global-variables.md`
-- `design-system/global-variable-strategy.md`
+- `features/preset-system-complete.md`
+- `features/design-variables.md`
 - `audits/01_UX_VISUAL.md`
 - `audits/02_PERFORMANCE.md`
 - `audits/03_ACCESSIBILITY.md`

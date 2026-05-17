@@ -1,6 +1,6 @@
 # Divi 5 Knowledge Base
 
-**Purpose:** Comprehensive reference for Divi 5 development, optimized for Claude AI assistance  
+**Purpose:** Comprehensive reference for Divi 5 development, optimized for the Simplicity Tech Divi AI Operator
 **Last Updated:** March 2026  
 **Divi Version:** 5.x (Official Release)  
 **KB Version:** 2.1
@@ -27,11 +27,11 @@ A production-ready knowledge base covering **95% of the Divi 5 development lifec
 
 Start with [`operator/README.md`](./operator/README.md) for source priority, task routing, safety rules, browser automation boundaries, and operational memory.
 
-### For Claude AI Users
+### For Simplicity Tech Divi AI Operator Users
 
 **Starting a conversation:**
 ```
-"Claude, check my Divi 5 KB at C:\Claude Projects\divi-knowledge-base\"
+"Use the Simplicity Tech Divi AI Operator with this KB at C:\Claude Projects\divi-knowledge-base\"
 "Read INDEX.md to see what's available"
 ```
 
@@ -42,7 +42,7 @@ Start with [`operator/README.md`](./operator/README.md) for source priority, tas
 "Use my KB's clamp philosophy - what does it say about body text?"
 ```
 
-**Claude will:**
+**The operator will:**
 - Read relevant KB files automatically
 - Quote specific sections with file references
 - Follow your documented workflows
@@ -241,7 +241,7 @@ Week 4: loop-builder.md, advanced patterns
 
 ## 💡 Tips for Maximum Effectiveness
 
-### With Claude AI
+### With the Simplicity Tech Divi AI Operator
 
 **Be specific:**
 ```
@@ -397,7 +397,7 @@ This KB provides everything you need to:
 - ✅ Troubleshoot 90%+ of issues
 - ✅ Deploy sites professionally
 - ✅ Maintain quality standards
-- ✅ Work efficiently with Claude AI
+- ✅ Work efficiently with the Simplicity Tech Divi AI Operator
 
 **Next steps:**
 1. Read `INDEX.md` for complete overview

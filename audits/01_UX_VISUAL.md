@@ -310,7 +310,7 @@ Alternative scales:
 - Perfect Fourth (1.333x) - More dramatic
 - Golden Ratio (1.618x) - Maximum contrast
 
-Reference: design-system/typography-scales.md
+Reference: build/01_system_setup.md
 ```
 
 ---
@@ -424,7 +424,7 @@ Element gaps       md (24px)  sm (16px)
 Paragraph margin   sm (16px)  sm (16px)
 Hero padding       3xl (96px) xl (48px)
 
-Reference: design-system/spacing-system.md
+Reference: build/01_system_setup.md
 ```
 
 ---
@@ -547,11 +547,10 @@ Button → Design → Button → Padding: 12px vertical, 24px horizontal
 ---
 
 **Related Files:**
-- `design-system/color-contrast-wcag.md`
-- `design-system/typography-scales.md`
-- `design-system/spacing-system.md`
-- `design-system/global-variable-strategy.md`
-- `features/responsive-breakpoints-7-system.md`
+- `audits/01_UX_VISUAL.md`
+- `build/01_system_setup.md`
+- `features/design-variables.md`
+- `features/responsive-breakpoints.md`
 
 ---
 

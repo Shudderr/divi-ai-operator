@@ -771,7 +771,7 @@ Why: Reuse your work across all future projects
 
 **Workflows:**
 - `starting-new-project.md` - Project kickoff process
-- `site-audit-process.md` - Auditing existing sites
+- `audits/00_MASTER_INDEX.md` - Auditing existing sites
 
 ---
 

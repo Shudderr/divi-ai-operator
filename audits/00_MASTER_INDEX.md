@@ -8,4 +8,4 @@ Use this index to determine which specific audit module to load. Do NOT load all
 | **ARIA, Tab Index, Alt Text** | `03_ACCESSIBILITY.md` |
 | **Global Vars, Presets, Inspector** | `04_DIVI5_LOGIC.md` |
 
-**Instruction for Claude:** If the user asks for a "General Audit," read this index and the `04_DIVI5_LOGIC.md` file first, as it is the most critical for Divi 5 architecture.
+**Instruction for the Simplicity Tech Divi AI Operator:** If the user asks for a "General Audit," read this index and the `04_DIVI5_LOGIC.md` file first, as it is the most critical for Divi 5 architecture.

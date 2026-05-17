@@ -780,19 +780,18 @@ Layout: Complex grid, multiple sections
 
 **Design System:**
 - `01_system_setup.md` - Color, typography, spacing standards
-- `../design-system/global-variable-strategy.md` - Global colors
+- `../features/design-variables.md` - Global colors
 
 **Mechanics:**
 - `02_divi5_mechanics.md` - How to implement and audit
-- `../features/stacked-presets-advanced.md` - Reusable component presets
+- `../features/preset-system-complete.md` - Reusable component presets
 
 **Workflows:**
-- `../workflows/site-audit-process.md` - Full audit workflow
-- `../workflows/client-handoff-checklist.md` - Pre-launch checklist
+- `../audits/00_MASTER_INDEX.md` - Full audit routing
+- `../workflows/deployment-checklist.md` - Pre-launch checklist
 
 **Patterns:**
-- `../design-patterns/hero-sections-library.md` - More hero variations
-- `../design-patterns/navigation-patterns.md` - Advanced navigation
+- `../resources/template-library.md` - More hero variations and navigation patterns
 
 ---
 

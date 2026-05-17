@@ -1,6 +1,6 @@
 # Design Logic & Universal Constants - Simplicity Template
 
-**Purpose:** This file acts as the "Decision Engine" for Claude Code. It provides the exact mathematical values for all UI elements to ensure 100% design consistency.
+**Purpose:** This file acts as the "Decision Engine" for the Simplicity Tech Divi AI Operator. It provides the exact mathematical values for all UI elements to ensure 100% design consistency.
 
 ---
 

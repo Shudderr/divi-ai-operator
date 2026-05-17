@@ -385,7 +385,7 @@ Learnings:
 ---
 
 **Related Files:**
-- `features/stacked-presets.md` for more on preset stacking
+- `features/preset-system-complete.md` for more on preset stacking
 - `customization/css-snippets.md` for using CSS variables
 
 ---

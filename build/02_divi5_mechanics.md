@@ -23,11 +23,11 @@
 ### Step 3: Compare Against Standards
 
 **For each element, check:**
-- `design-system/color-contrast-wcag.md` (contrast ratios)
-- `design-system/typography-scales.md` (font sizes in scale?)
-- `design-system/spacing-system.md` (consistent spacing?)
-- `design-system/global-variable-strategy.md` (should be global?)
-- `features/responsive-breakpoints-7-system.md` (responsive?)
+- `audits/01_UX_VISUAL.md` (contrast ratios)
+- `build/01_system_setup.md` (font sizes in scale?)
+- `build/01_system_setup.md` (consistent spacing?)
+- `features/design-variables.md` (should be global?)
+- `features/responsive-breakpoints.md` (responsive?)
 
 ### Step 4: Document Findings
 
@@ -147,7 +147,7 @@ Benefits:
 - Harmonious visual rhythm
 - Easy to calculate new sizes
 
-See: design-system/typography-scales.md"
+See: build/01_system_setup.md"
 ```
 
 ---
@@ -176,7 +176,7 @@ Benefits:
 - Easier to maintain
 - Scales predictably
 
-See: design-system/spacing-system.md"
+See: build/01_system_setup.md"
 ```
 
 ---
@@ -254,7 +254,7 @@ Fixes:
 2. Add alt text: Image → Settings → Alternative Text
 3. Darken link color to #0092cc (4.5:1 ratio)
 
-See: accessibility/wcag-compliance-checklist.md"
+See: audits/03_ACCESSIBILITY.md"
 ```
 
 ---
@@ -342,7 +342,7 @@ Result: Branded card with animation, reusable across site
 - Provide code: Give exact CSS/settings to change
 - Explain why: "This fails WCAG because..."
 - Prioritize: Critical → Important → Nice-to-have
-- Reference KB: "See global-variable-strategy.md for more"
+- Reference KB: "See features/design-variables.md for more"
 - Be encouraging: "Good use of flexbox here"
 
 **❌ DON'T:**
@@ -367,7 +367,7 @@ I've reviewed your hero section. Here's what I found:
    Code: Section → Design → Background → Color: #c21875
 
    Why: Users with visual impairments can't read the text
-   Reference: design-system/color-contrast-wcag.md
+   Reference: audits/01_UX_VISUAL.md
 
 🟡 Important:
 
@@ -381,7 +381,7 @@ I've reviewed your hero section. Here's what I found:
    3. Update all 4 instances to use global
 
    Why: Easier to maintain, consistent across site
-   Reference: design-system/global-variable-strategy.md
+   Reference: features/design-variables.md
 
 🟢 Enhancements:
 
@@ -392,7 +392,7 @@ I've reviewed your hero section. Here's what I found:
    - H1: 49px, H2: 39px, H3: 31px
 
    Why: More mathematical consistency, easier to scale
-   Reference: design-system/typography-scales.md
+   Reference: build/01_system_setup.md
 
 Overall: Strong layout, good use of spacing. Main focus should be
 fixing the contrast issue (#1) and considering global variables (#2).
@@ -409,21 +409,21 @@ fixing the contrast issue (#1) and considering global variables (#2).
 ## Related Files
 
 **Prerequisites** (read these first):
-- `design-system/color-contrast-wcag.md` - Understanding contrast
+- `audits/01_UX_VISUAL.md` - Understanding contrast
 - `features/global-variables.md` - Global color system
 
 **Related Topics:**
-- `design-patterns/hero-sections-library.md` - Applying these principles
-- `workflows/site-audit-process.md` - Full audit including this
+- `resources/template-library.md` - Applying these principles
+- `audits/00_MASTER_INDEX.md` - Full audit routing
 
 **Troubleshooting:**
-- `troubleshooting/css-not-applying.md` - If changes don't work
+- `troubleshooting/common-issues.md` - If changes don't work
 ```
 
 **Within content, reference like this:**
 ```markdown
 For more on when to use global vs local colors, see
-[Global Variable Strategy](../design-system/global-variable-strategy.md).
+[Design Variables](../features/design-variables.md).
 ```
 
 ---
@@ -433,27 +433,27 @@ For more on when to use global vs local colors, see
 ### Recommended Build Order:
 
 **Session 1: Critical Foundation**
-1. AUDIT_INSTRUCTIONS.md
-2. design-system/global-variable-strategy.md
-3. design-system/color-contrast-wcag.md
-4. design-system/typography-scales.md
-5. design-system/spacing-system.md
+1. audits/00_MASTER_INDEX.md
+2. features/design-variables.md
+3. audits/01_UX_VISUAL.md
+4. build/01_system_setup.md
+5. build/01_system_setup.md
 
 **Session 2: Workflows & Patterns**
-6. workflows/site-audit-process.md
-7. features/stacked-presets-advanced.md
-8. design-patterns/navigation-patterns.md
-9. design-patterns/hero-sections-library.md
+6. audits/00_MASTER_INDEX.md
+7. features/preset-system-complete.md
+8. resources/template-library.md
+9. resources/template-library.md
 
 **Session 3: Performance & Accessibility**
-10. performance/image-optimization-guide.md
-11. accessibility/wcag-compliance-checklist.md
-12. features/responsive-breakpoints-7-system.md
+10. performance/lcp-optimization.md
+11. audits/03_ACCESSIBILITY.md
+12. features/responsive-breakpoints.md
 
 **Session 4: Troubleshooting & Client Work**
-13. troubleshooting/css-not-applying.md
-14. client-work/msp-tech-template.md
-15. workflows/client-handoff-checklist.md
+13. troubleshooting/common-issues.md
+14. resources/template-library.md
+15. workflows/deployment-checklist.md
 
 ---
 
@@ -462,7 +462,7 @@ For more on when to use global vs local colors, see
 ### After Creating Each File:
 
 1. **Update site-map.md** - add file to appropriate section
-2. **Test the file** - can Claude Code read and use it?
+2. **Test the file** - can the Simplicity Tech Divi AI Operator read and use it?
 3. **Cross-reference** - add links from related files
 4. **Verify metadata** - all fields complete
 5. **Check against template** - follows structure
@@ -475,24 +475,24 @@ Keep a checklist in `site-map.md` or create `BUILD_PROGRESS.md`:
 ## Build Progress
 
 ### Priority 1 (Critical) - 8 files
-- [x] AUDIT_INSTRUCTIONS.md
-- [x] design-system/global-variable-strategy.md
-- [x] design-system/color-contrast-wcag.md
-- [ ] design-system/typography-scales.md
-- [ ] design-system/spacing-system.md
-- [ ] workflows/site-audit-process.md
-- [ ] features/stacked-presets-advanced.md
-- [ ] design-patterns/navigation-patterns.md
+- [x] audits/00_MASTER_INDEX.md
+- [x] features/design-variables.md
+- [x] audits/01_UX_VISUAL.md
+- [ ] build/01_system_setup.md
+- [ ] build/01_system_setup.md
+- [ ] audits/00_MASTER_INDEX.md
+- [ ] features/preset-system-complete.md
+- [ ] resources/template-library.md
 
 ### Priority 2 (High Value) - 7 files
-- [ ] features/responsive-breakpoints-7-system.md
-- [ ] design-patterns/hero-sections-library.md
+- [ ] features/responsive-breakpoints.md
+- [ ] resources/template-library.md
 ...
 ```
 
 ---
 
-## 🎯 Special Instructions for Claude Code
+## 🎯 Special Instructions for the Simplicity Tech Divi AI Operator
 
 ### When Building Knowledge Base Files:
 
@@ -978,12 +978,12 @@ Two tools working together = clean, maintainable site
 
 **The knowledge base is "complete" when:**
 
-Zac can say to Claude Code:
+Zac can say to the Simplicity Tech Divi AI Operator:
 ```
-"Read AUDIT_INSTRUCTIONS.md and review this page for improvements"
+"Read audits/00_MASTER_INDEX.md and review this page for improvements"
 ```
 
-**And Claude Code:**
+**And the Simplicity Tech Divi AI Operator:**
 - ✅ Identifies global variable opportunities
 - ✅ Checks color contrast and flags failures
 - ✅ Verifies typography hierarchy
@@ -1003,15 +1003,15 @@ Zac can say to Claude Code:
 
 **Design System:**
 - `01_system_setup.md` - Color, typography, spacing standards
-- `../design-system/global-variable-strategy.md` - Global vs local decisions
+- `../features/design-variables.md` - Global vs local decisions
 
 **Components:**
 - `03_components.md` - Specific component implementation
-- `../design-patterns/` - Pattern library
+- `../resources/template-library.md` - Pattern library
 
 **Workflows:**
-- `../workflows/site-audit-process.md` - Complete audit workflow
-- `../workflows/client-handoff-checklist.md` - Pre-launch checklist
+- `../audits/00_MASTER_INDEX.md` - Complete audit routing
+- `../workflows/deployment-checklist.md` - Pre-launch checklist
 
 ---
 

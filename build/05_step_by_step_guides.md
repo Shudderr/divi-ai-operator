@@ -675,7 +675,7 @@ height: 100%;
 
 **Components:**
 - `03_components.md` - Component design patterns
-- `../design-patterns/` - Additional patterns
+- `../resources/template-library.md` - Additional patterns
 
 **Mechanics:**
 - `02_divi5_mechanics.md` - How Divi 5 works

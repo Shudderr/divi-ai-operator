@@ -54,11 +54,11 @@ Do not use this file for generic Divi tutorials. Link to KB files instead.
 **Decision/Fix:** Keep intelligence in internal docs, task routing, safety rules, and standards.
 **Related Files:** `operator/browser-automation.md`, `operator/safety-rules.md`
 
-### 2026-05-18 - Stale Reference Cleanup Is Deferred
+### 2026-05-18 - Stale Reference Cleanup Completed
 
 **Context:** Initial repo analysis found stale references to older planned folders.
-**Observation:** Some docs mention paths such as `design-system/`, `accessibility/`, and `design-patterns/`.
-**Decision/Fix:** Do not clean these during operator setup. Handle in a later focused cleanup pass.
+**Observation:** Some docs mentioned paths such as `design-system/`, `accessibility/`, `design-patterns/`, and `client-work/`.
+**Decision/Fix:** Replaced clear stale references with current KB equivalents. Keep future cleanup narrow and avoid rewriting technical guidance.
 **Related Files:** `STATE.md`, `HANDOFF.md`
 
 ---
@@ -90,4 +90,3 @@ No additional styling decision entries yet.
 ## Browser Automation Findings
 
 No browser automation findings yet.
-

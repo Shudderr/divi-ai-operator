@@ -605,11 +605,8 @@ Testing tools used:
 ---
 
 **Related Files:**
-- `accessibility/wcag-compliance-checklist.md`
-- `accessibility/keyboard-navigation.md`
-- `accessibility/screen-reader-optimization.md`
-- `accessibility/accessible-color-combinations.md`
-- `design-system/color-contrast-wcag.md`
+- `audits/03_ACCESSIBILITY.md`
+- `audits/01_UX_VISUAL.md`
 
 ---
 

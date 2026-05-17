@@ -286,7 +286,7 @@ Divi → Support Center:
 
 - [ ] Font files compressed? (WOFF2 preferred)
 
-**Reference:** `performance/font-loading-strategies.md`
+**Reference:** `performance/lcp-optimization.md`
 
 **CSS/JS Delivery:**
 - [ ] CSS minified?
@@ -369,10 +369,8 @@ Divi → Support Center:
 
 **Related Files:**
 - `performance/lcp-optimization.md`
-- `performance/image-optimization-guide.md`
-- `performance/font-loading-strategies.md`
-- `performance/css-js-optimization.md`
-- `performance/caching-configurations.md`
+- `troubleshooting/common-issues.md`
+- `workflows/deployment-checklist.md`
 
 ---
 

@@ -11,7 +11,7 @@
 
 **Location:** `C:\Claude Projects\divi-knowledge-base\`
 
-Use this file to quickly navigate the knowledge base. When starting a Claude session, reference this to understand the complete structure.
+Use this file to quickly navigate the knowledge base. When starting an operator session, reference this to understand the complete structure.
 
 ---
 
@@ -374,7 +374,7 @@ Documented in [template-library.md](./resources/template-library.md) under "My C
 
 ---
 
-## 💡 Using This KB with Claude
+## Using This KB with the Simplicity Tech Divi AI Operator
 
 ### Effective Prompts
 
@@ -399,7 +399,7 @@ Documented in [template-library.md](./resources/template-library.md) under "My C
 "Use my KB's Inspector workflow to debug this"
 ```
 
-**Claude will:**
+**The operator will:**
 - Read the relevant KB files
 - Quote specific sections
 - Follow your documented processes

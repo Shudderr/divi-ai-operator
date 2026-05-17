@@ -679,11 +679,11 @@ Use clear, consistent naming:
 **Related Topics:**
 - `02_divi5_mechanics.md` - How to implement these systems
 - `03_components.md` - Applying systems to components
-- `../workflows/site-audit-process.md` - Full audit process
+- `../audits/00_MASTER_INDEX.md` - Full audit routing
 
 **Troubleshooting:**
-- `../troubleshooting/css-not-applying.md` - If changes don't work
-- `../accessibility/wcag-compliance-checklist.md` - Complete accessibility guide
+- `../troubleshooting/common-issues.md` - If changes don't work
+- `../audits/03_ACCESSIBILITY.md` - Complete accessibility guide
 
 ---
 
