@@ -1,0 +1,52 @@
+{
+  "context": "et_builder",
+  "data": [
+    {
+      "type": "et_pb_section",
+      "attrs": {
+        "admin_label": "Section - [Name]",
+        "module_class": "ds-section",
+        "custom_padding": "64px||64px||false|false",
+        "custom_padding_tablet": "48px||48px||false|false",
+        "custom_padding_phone": "32px||32px||false|false"
+      },
+      "children": [
+        {
+          "type": "et_pb_row",
+          "attrs": {
+            "admin_label": "Row - [Name]",
+            "module_class": "ds-row",
+            "gutter_width": "3",
+            "width": "100%",
+            "max_width": "1280px",
+            "custom_padding": "24px||24px||false|false"
+          },
+          "children": [
+            {
+              "type": "et_pb_column",
+              "attrs": {
+                "type": "4_4",
+                "module_class": "ds-column"
+              },
+              "children": [
+                {
+                  "type": "et_pb_text",
+                  "attrs": {
+                    "admin_label": "Text - Placeholder",
+                    "module_class": "ds-module",
+                    "text": "<h2>Section Heading</h2><p>Replace this with your content.</p>",
+                    "header_font_size": "var(--et-global-typography-h2-size)",
+                    "text_text_color": "var(--et-global-color-text-primary)",
+                    "custom_margin": "0px||16px||false|false"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "Divi 5",
+  "version": "1.0"
+}
