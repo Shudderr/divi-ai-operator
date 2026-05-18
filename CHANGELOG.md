@@ -6,6 +6,18 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 10)
+
+Added Stage 2 Divi responsive system summary:
+
+- Created `resources/external-sources/summaries/stage-2-responsive-system.md` as the official-doc-backed responsive learning summary for the operator.
+- Summarised official Divi 5 responsive sources covering the Responsive Editor, responsive options, customizable breakpoints, responsive previews, visibility controls, advanced units, fluid sizing variables, nested rows, specialty sections, rows, and column/gutter width concepts.
+- Captured breakpoint behaviour, responsive inheritance/reset logic, responsive editing workflows, likely failure patterns, do/don't rules, local verification unknowns, and candidate capability-matrix items marked official-doc-backed only.
+- Updated `HANDOFF.md` and `STATE.md` to mark Stage 2 complete and point the next ingestion step at Stage 3 layout/navigation docs.
+- Did not update `operator/divi-builder-capabilities.md`; no new execution capability was locally verified.
+
+---
+
 ## 2026-05-18 (Pass 9)
 
 Added Stage 1 Divi Builder interface summary:

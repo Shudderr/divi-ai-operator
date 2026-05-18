@@ -38,8 +38,9 @@ The next task is official Divi 5 source ingestion:
 - Read `resources/external-sources/elegant-themes-index.md`.
 - Follow `resources/external-sources/divi-5-builder-learning-plan.md`.
 - Stage 1 Builder interface summary is complete: `resources/external-sources/summaries/stage-1-builder-interface.md`.
-- Continue with Stage 2 responsive system docs.
-- Summarise official responsive, layout/navigation, Wireframe/Layers, presets, design variables, Style Inspector, Theme Builder, module, portability, and performance references.
+- Stage 2 responsive system summary is complete: `resources/external-sources/summaries/stage-2-responsive-system.md`.
+- Continue with Stage 3 layout/navigation docs, including Wireframe and Layers.
+- Summarise official layout/navigation, Wireframe/Layers, presets, design variables, Style Inspector, Theme Builder, module, portability, and performance references.
 - Map official-doc-backed knowledge into operator capabilities without marking it VERIFIED.
 
 Before executing any Divi Builder interaction, check `operator/divi-builder-capabilities.md` first. All VERIFIED capabilities are documented there with date and method. UNKNOWN and OFFICIAL-DOC-BACKED capabilities must be locally verified before being used as a basis for execution.

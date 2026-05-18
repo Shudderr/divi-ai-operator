@@ -102,6 +102,7 @@ The official external source layer has been introduced:
 - `resources/external-sources/elegant-themes-index.md`
 - `resources/external-sources/divi-5-builder-learning-plan.md`
 - `resources/external-sources/summaries/stage-1-builder-interface.md`
+- `resources/external-sources/summaries/stage-2-responsive-system.md`
 
 The Divi layout summarizer foundation now exists:
 
@@ -157,10 +158,12 @@ The case testing and summarizer foundations are in place, but further Builder ex
 
 Stage 1 of the official Divi 5 Builder learning plan is complete. `resources/external-sources/summaries/stage-1-builder-interface.md` summarises official Builder interface docs and lists local verification targets without marking them VERIFIED.
 
+Stage 2 is also complete. `resources/external-sources/summaries/stage-2-responsive-system.md` summarises official responsive-system docs, breakpoint behaviour, Responsive Editor workflows, units/sizing concepts, visibility/overflow controls, likely responsive failure patterns, and local verification targets without marking them VERIFIED.
+
 Next:
 
-- Continue with Stage 2 in `resources/external-sources/divi-5-builder-learning-plan.md`.
-- Summarise official responsive system docs, then continue to layout/navigation, Wireframe/Layers, presets/design variables, and capability-mapping docs.
+- Continue with Stage 3 in `resources/external-sources/divi-5-builder-learning-plan.md`.
+- Summarise official layout/navigation docs, including Wireframe and Layers, then continue to presets/design variables and capability-mapping docs.
 - Update `operator/divi-builder-capabilities.md` only with clear official-doc-backed context, unknowns, and later verification targets.
 - Resume controlled LocalWP execution tests only after the learning plan is complete.
 
