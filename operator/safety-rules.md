@@ -49,11 +49,13 @@ For any Divi layout or styling fix, the required execution order is:
 1. Open the page in a browser (LocalWP or staging).
 2. Open Divi Builder.
 3. Check `operator/divi-builder-capabilities.md` — confirm the target interaction is VERIFIED. Do not proceed on ASSUMED or UNKNOWN capabilities without a verification step.
-4. Inspect the relevant section, row, or column for existing responsive controls using verified targeting methods (right-panel hierarchy preferred).
-5. Apply a Builder setting-level fix if the control exists. Document the setting changed.
-6. If Builder controls are insufficient, document that finding explicitly and seek approval before writing any CSS.
-7. If CSS fallback is approved: use WordPress Additional CSS or page-level CSS — not direct database mutation. Document it as a fallback, not first-line execution.
-8. Never skip steps 1–5 to go directly to CSS or database mutation.
+4. Confirm the target element's full parent chain (Section type → Row → Column → Module) using structure-first navigation — right-panel hierarchy (VERIFIED), Layers View (verify locally first), or breadcrumbs in an open settings modal (verify locally first). Do not rely on canvas-only selection.
+5. If the target field has visual styling, confirm whether the value is local, preset-controlled, or variable-referenced before editing. Use the Style Inspector when locally verified. If the value is preset-controlled or variable-referenced, assess propagation scope before deciding whether to apply a local override or edit the global source.
+6. Inspect the relevant section, row, or column for existing responsive controls using verified targeting methods (right-panel hierarchy preferred).
+7. Apply a Builder setting-level fix if the control exists. Document the setting changed.
+8. If Builder controls are insufficient, document that finding explicitly and seek approval before writing any CSS.
+9. If CSS fallback is approved: use WordPress Additional CSS or page-level CSS — not direct database mutation. Document it as a fallback, not first-line execution.
+10. Never skip steps 1–7 to go directly to CSS or database mutation.
 
 Operator note: Direct database mutation (via mysql2, wp-cli, or any script) is not an approved path unless explicitly authorised for that specific task. See `operator/memory.md` — Process / Safety for the incident record.
 

@@ -105,6 +105,7 @@ The official external source layer has been introduced:
 - `resources/external-sources/summaries/stage-2-responsive-system.md`
 - `resources/external-sources/summaries/stage-3-navigation-and-traversal.md`
 - `resources/external-sources/summaries/stage-4-presets-and-global-systems.md`
+- `resources/external-sources/summaries/stage-5-operator-mapping.md`
 
 The Divi layout summarizer foundation now exists:
 
@@ -166,11 +167,19 @@ Stage 3 is complete. `resources/external-sources/summaries/stage-3-navigation-an
 
 Stage 4 is complete. `resources/external-sources/summaries/stage-4-presets-and-global-systems.md` summarises official presets and global systems docs covering Element Presets, Option Group Presets, stacked/nested presets, Preset Manager, Design Variables, Variable Generator, Style Inspector, Theme Builder templates, dynamic content, inheritance/propagation models, rollback complexity, common global-system failure patterns, and candidate capability-matrix items — all marked official-doc-backed only.
 
+Stage 5 is complete. `resources/external-sources/summaries/stage-5-operator-mapping.md` converts Stages 1–4 into practical operator behaviour rules covering execution readiness gates, Builder navigation rules, responsive editing rules, preset/variable/global-system rules, capability-matrix candidates, prioritised local verification targets, and CASE-001 resumption conditions.
+
+`operator/safety-rules.md` updated: Implementation Execution Order now has 10 steps — new steps 4 (structure-first hierarchy confirmation) and 5 (style-source confirmation) added before the previous inspect/apply steps.
+
+`operator/browser-automation.md` updated: Required Workflow now has 11 steps — new steps 6 (structure-first hierarchy confirmation) and 7 (style-source confirmation) added before the apply step.
+
+The official Divi 5 learning plan (Stages 1–5) is complete.
+
 Next:
 
-- Continue with Stage 5 in `resources/external-sources/divi-5-builder-learning-plan.md`.
-- Map official-doc-backed knowledge from Stages 1–4 into `operator/divi-builder-capabilities.md` under a clearly separated official-doc-backed section.
-- Do not mark any Stage 1–4 item as VERIFIED; keep VERIFIED entries limited to behaviours already observed locally.
-- Resume controlled LocalWP execution tests only after Stage 5 mapping is complete.
+- Resume controlled LocalWP execution as a **read-only verification pass**.
+- Verify Priority 1 targets from `stage-5-operator-mapping.md` §8: Style Inspector, Layers View, Wireframe View, breadcrumbs, Responsive Editor, Tablet/Phone canvas widths.
+- Record each verified item in `operator/divi-builder-capabilities.md` with date, method, and caveats.
+- Do not resume CASE-001 editing until Priority 1 and Priority 2 verification targets are complete.
 
 Do not restructure existing KB folders.

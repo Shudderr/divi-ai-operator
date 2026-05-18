@@ -6,6 +6,18 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 13)
+
+Completed Stage 5 — mapped official Divi 5 learning summaries into operator guidance:
+
+- Created `resources/external-sources/summaries/stage-5-operator-mapping.md` — converts Stages 1–4 into practical operator behaviour rules. Covers: per-stage behaviour updates (interface discipline, responsive discipline, traversal discipline, global-system discipline), six execution readiness gates (capability matrix check, hierarchy confirmation, styling source confirmation, breakpoint context confirmation, propagation scope assessment, rollback path identification), practical navigation rules, responsive editing rules, preset/variable/global-system rules, capability-matrix candidate entries (all marked OFFICIAL-DOC-BACKED only), prioritised next local verification targets (8 Priority 1–4 items), CASE-001 resumption conditions, and a consolidated Do/Don't operator checklist.
+- Updated `operator/safety-rules.md` — Implementation Execution Order expanded from 8 to 10 steps: added step 4 (structure-first hierarchy confirmation via right-panel hierarchy, Layers, or breadcrumbs) and step 5 (style-source confirmation via Style Inspector before any styled field edit); renumbered subsequent steps to 6–10; updated final step to reference steps 1–7.
+- Updated `operator/browser-automation.md` — Required Workflow expanded from 9 to 11 steps: added step 6 (structure-first hierarchy confirmation) and step 7 (style-source confirmation with explicit approval requirement for preset/variable edits); renumbered subsequent steps to 8–11; removed trailing blank line.
+- Did not update `operator/divi-builder-capabilities.md` — no locally VERIFIED capability was added; a future session should add a clearly separated official-doc-backed candidate section based on the Stage 5 candidate table.
+- Updated `HANDOFF.md` and `STATE.md` to mark the full learning plan complete and direct the next session to a narrow read-only verification pass.
+
+---
+
 ## 2026-05-18 (Pass 12)
 
 Added Stage 4 Divi presets and global systems summary:

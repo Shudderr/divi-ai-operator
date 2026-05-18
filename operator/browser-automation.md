@@ -96,10 +96,12 @@ For browser-assisted changes:
 3. Confirm the intended change.
 4. Confirm environment and allowed actions.
 5. Check `operator/divi-builder-capabilities.md` — confirm the target interaction is VERIFIED before executing it. Do not proceed on ASSUMED or UNKNOWN capabilities.
-6. Apply the smallest safe change.
-7. Verify desktop, tablet, and mobile if visual.
-8. Report what changed, what was checked, and what still needs review.
-9. Record recurring findings in `operator/memory.md` when useful.
+6. Confirm the target element's full parent chain (Section type → Row → Column → Module) via structure-first navigation before attempting any canvas interaction or settings edit.
+7. If the target field has visual styling, confirm whether the value is local, preset-controlled, or variable-referenced (use Style Inspector when locally verified) before editing. Do not edit a preset or variable without explicit approval.
+8. Apply the smallest safe change.
+9. Verify desktop, tablet, and mobile if visual.
+10. Report what changed, what was checked, and what still needs review.
+11. Record recurring findings in `operator/memory.md` when useful.
 
 ---
 
@@ -108,4 +110,3 @@ For browser-assisted changes:
 The first milestone is AI-guided safe operation with controlled staging workflows.
 
 Do not attempt full autonomous Divi automation until task routing, safety rules, QA expectations, and memory practices are proven.
-

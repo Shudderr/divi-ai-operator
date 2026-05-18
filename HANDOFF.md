@@ -41,8 +41,22 @@ The next task is official Divi 5 source ingestion:
 - Stage 2 responsive system summary is complete: `resources/external-sources/summaries/stage-2-responsive-system.md`.
 - Stage 3 navigation and traversal summary is complete: `resources/external-sources/summaries/stage-3-navigation-and-traversal.md`.
 - Stage 4 presets and global systems summary is complete: `resources/external-sources/summaries/stage-4-presets-and-global-systems.md`.
-- Continue with Stage 5 — map official-doc-backed knowledge across Stages 1–4 into the capability matrix.
-- Update `operator/divi-builder-capabilities.md` only where a clearly separated official-doc-backed section exists and additions cannot be mistaken for VERIFIED execution capability.
+- Stage 5 operator mapping is complete: `resources/external-sources/summaries/stage-5-operator-mapping.md`.
+- `operator/safety-rules.md` updated: Implementation Execution Order now includes structure-first navigation step (step 4) and style-source confirmation step (step 5).
+- `operator/browser-automation.md` updated: Required Workflow now includes structure-first navigation step (step 6) and style-source confirmation step (step 7).
+
+The staged official learning plan (Stages 1–5) is complete. The operator is now equipped with official-doc-backed conceptual knowledge for interface, responsive, navigation, presets/global systems, and operator mapping.
+
+The next session should be a **narrow, read-only verification pass** against the LocalWP site targeting the Priority 1 and Priority 2 items from `resources/external-sources/summaries/stage-5-operator-mapping.md` §8:
+
+1. Style Inspector access and read-only behaviour.
+2. Layers View structural tree.
+3. Wireframe View structural blocks.
+4. Breadcrumb behaviour in settings panel.
+5. Responsive Editor panel for a low-risk field.
+6. Tablet and Phone canvas widths.
+
+No edits during that session. Each verified item should be recorded in `operator/divi-builder-capabilities.md` with date, method, and caveats.
 
 Before executing any Divi Builder interaction, check `operator/divi-builder-capabilities.md` first. All VERIFIED capabilities are documented there with date and method. UNKNOWN and OFFICIAL-DOC-BACKED capabilities must be locally verified before being used as a basis for execution.
 
