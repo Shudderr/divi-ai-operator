@@ -82,6 +82,44 @@ When both exist, the JSON export is the authoritative asset.
 
 ---
 
+## Preferred AI Workflow: Layout Summaries
+
+Raw Divi JSON exports are the source artifact, but they should not usually be the primary AI reasoning artifact. Divi exports are noisy, repetitive, and token-heavy.
+
+Preferred workflow:
+
+```
+raw-layout.json
+  -> layout-summary.md
+  -> operator reasoning
+```
+
+Use `layout-summary.md` as the first AI context for a case. The summary should expose layout structure, module hierarchy, responsive overrides, custom classes, custom CSS, likely risk areas, and complexity indicators without dumping the full Divi export.
+
+Keep the raw JSON in the case folder for reference, debugging, reproducibility, and re-importing into LocalWP. Use it when the summary is ambiguous or when a precise setting needs to be confirmed.
+
+Generate a summary with:
+
+```
+node scripts/summarize-divi-layout.js cases/example-case/raw-layout.json
+```
+
+By default, the script writes:
+
+```
+cases/example-case/layout-summary.md
+```
+
+Future possibilities, documented for later and not part of the current foundation:
+
+- Risk scoring.
+- Module-specific heuristics.
+- Responsive diagnostics.
+- Browser automation integration.
+- Operator memory suggestions.
+
+---
+
 ## Case Asset Structure
 
 Each case lives in its own subfolder under `cases/`:
@@ -91,7 +129,8 @@ cases/
   case-template.md
   example-case/
     case.md          ← structured case document (required)
-    layout.json      ← Divi section/page export (preferred)
+    raw-layout.json  ← Divi section/page export (source artifact)
+    layout-summary.md ← preferred AI reasoning artifact
     custom.css       ← any custom CSS applied to the affected area
     screenshots/
       desktop.png
@@ -103,6 +142,7 @@ At minimum, a case must have:
 
 - `case.md` with the structured case document.
 - A Divi JSON export, or a documented reason why one is not available.
+- A `layout-summary.md` when a raw Divi JSON export is available.
 
 ---
 

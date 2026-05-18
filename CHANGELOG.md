@@ -6,6 +6,16 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 4)
+
+Added the Divi layout summarizer foundation:
+
+- `scripts/summarize-divi-layout.js` generates token-efficient `layout-summary.md` files from raw Divi JSON exports.
+- Summaries expose layout structure, row and module hierarchy, responsive overrides, custom classes, custom CSS, potential risk areas, and complexity indicators.
+- `cases/README.md` now documents the preferred workflow: raw Divi JSON remains the source artifact, while `layout-summary.md` becomes the primary AI reasoning artifact.
+
+---
+
 ## 2026-05-18 (Pass 3)
 
 Added the `cases/` case testing foundation:

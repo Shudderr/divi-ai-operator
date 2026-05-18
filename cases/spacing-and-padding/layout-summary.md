@@ -48,12 +48,10 @@ Module counts:
 - number-counter: 3
 - slide: 3
 - accordion: 1
-- placeholder: 1
 - slider: 1
 
 Module hierarchy:
 
-- Unsectioned > placeholder #1.
 - Header > heading #5: Divi Real Estate Group.
 - Header > heading #6: Find Your Dream Home With Divi.
 - Header > icon #9.
@@ -65,7 +63,7 @@ Module hierarchy:
 - Header > icon #18.
 - Header > heading #19: New Listings.
 - Stats > heading #22: Searching For Your Dream Home Doesn’t Need to Be Stressful.
-- Stats > text #26: There are many variations of passages of Lorem Ipsum available, but th.
+- Stats > text #26: There are many variations of passages of Lorem Ipsum available, but....
 - Stats > number-counter #29: Open Listings.
 - Stats > number-counter #31: Real Estate Agents.
 - Stats > number-counter #33: Counties Served.
@@ -92,8 +90,9 @@ Module hierarchy:
 - Categories > heading #67: Riverside.
 - Features > heading #71: Why Choose Us?.
 - Features > heading #72: Expertise You Can Trust.
-- Features > blurb #75: There are many variations of passages of Lorem Ipsum majority have suf.
-- 32 additional items omitted for token efficiency.
+- Features > blurb #75: There are many variations of passages of Lorem Ipsum majority have ....
+- Features > button #76.
+- 31 additional items omitted for token efficiency.
 
 ## Responsive Overrides
 
@@ -124,7 +123,7 @@ Module hierarchy:
 - Fixed large dimension: module.decoration.sizing.desktop.value.maxWidth on heading #6 (Find Your Dream Home With Divi) (1080px).
 - Tight row gutter: module.advanced.gutter.desktop.value on row #7 (enable: on, width: 1).
 - Fixed large dimension: innerSizing.decoration.sizing.desktop.value.maxWidth on section #20 (Stats) (1500px).
-- Fixed large dimension: module.decoration.sizing.desktop.value.maxWidth on text #26 (There are many variations of passages of Lorem Ipsum available, but th) (625px).
+- Fixed large dimension: module.decoration.sizing.desktop.value.maxWidth on text #26 (There are many variations of passages of Lorem Ipsum available, but...) (625px).
 - Tight row gutter: module.advanced.gutter.desktop.value on row-inner #27 (enable: on, width: 1, makeEqual: on).
 - Tight row gutter: module.advanced.gutter.desktop.value on row #59 (enable: on, width: 1).
 - Viewport-width sizing or spacing: module.decoration.spacing.desktop.value.padding.top on column #60 (14vw).
@@ -149,8 +148,8 @@ Module hierarchy:
 - Sections: 9
 - Rows: 16
 - Columns: 37
-- Modules: 72
-- Module types: 13
+- Modules: 71
+- Module types: 12
 - Responsive override count: 10
 - Custom class count: 0
 - Custom CSS count: 0
