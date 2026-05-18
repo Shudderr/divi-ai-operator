@@ -6,6 +6,19 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 11)
+
+Added Stage 3 Divi navigation and traversal summary:
+
+- Created `resources/external-sources/summaries/stage-3-navigation-and-traversal.md` as the official-doc-backed navigation and structural traversal learning summary for the operator.
+- Summarised official Divi 5 sources covering: Layers View (hierarchy navigation, collapsing/expanding, click-to-select, renaming, drag-and-drop), Wireframe View (structural block display, non-visual traversal, dense-page navigation), canvas navigation concepts (overlay behaviour, hover interaction, selection ambiguity, iframe implications), structural traversal workflows (top-down logic, safest module targeting, tracing inheritance), specialty section structure (module columns vs row columns, nested row depth, responsive risks), and Command Center navigation concepts.
+- Documented core structural concepts: Page → Section → Row → Column → Module hierarchy; module ownership and structural inheritance; nested row hierarchy; specialty section duality of module columns and row columns; row-inner and column-inner traversal distinctions.
+- Captured operator implications, common structural failure patterns, do/don't rules, unknowns requiring local verification, and candidate capability-matrix items — all clearly marked OFFICIAL-DOC-BACKED only.
+- Updated `HANDOFF.md` and `STATE.md` to mark Stage 3 complete and point the next ingestion step at Stage 4 presets and design variables docs.
+- Did not update `operator/divi-builder-capabilities.md`; no new execution capability was locally verified.
+
+---
+
 ## 2026-05-18 (Pass 10)
 
 Added Stage 2 Divi responsive system summary:
