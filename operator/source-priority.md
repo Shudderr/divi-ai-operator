@@ -35,6 +35,10 @@ Internal sources define how work should be done for Simplicity Tech, even when e
 
 ## Priority 2: Official Elegant Themes / Divi Sources
 
+Start with the curated index:
+
+- `resources/external-sources/elegant-themes-index.md`
+
 Use when:
 
 - Internal docs do not cover a current Divi feature.
@@ -43,6 +47,8 @@ Use when:
 - The task depends on current Divi version details.
 
 Official documentation can clarify implementation details but should not override internal workflow, safety, or design standards.
+
+Official documentation is reference knowledge only. It can inform the operator's understanding, but it does not make a Builder action VERIFIED for execution. Execution capability must still be locally tested and documented in `operator/divi-builder-capabilities.md`.
 
 ---
 
@@ -75,3 +81,4 @@ When sources disagree:
 
 If current Divi behaviour, current plugin behaviour, pricing, releases, or documentation may have changed, verify against official sources before making a recommendation.
 
+For Divi 5 Builder behaviour, check `resources/external-sources/elegant-themes-index.md` before starting new external research. Add new official sources there only when they fill a clear gap.

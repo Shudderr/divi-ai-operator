@@ -13,17 +13,22 @@ This document is the canonical reference for what the operator has **directly ve
 
 The operator must not treat assumptions or inferences as operational truth. When a capability is listed as UNKNOWN, it must be verified before being used as a basis for execution.
 
+Official Elegant Themes / Divi documentation can ground terminology and expected feature behaviour, but it does not prove the operator can execute the action safely in the local Builder. Official-doc-backed knowledge must remain separate from locally VERIFIED execution knowledge.
+
 ---
 
 ## Reading This Document
 
-Each entry is tagged with one of three status labels:
+Each entry is tagged with one of these status labels:
 
 | Label | Meaning |
 |-------|---------|
 | **VERIFIED** | Directly observed during a live browser session. Includes date and method. |
+| **OFFICIAL-DOC-BACKED** | Supported by official Elegant Themes / Divi documentation, but not yet locally verified as an execution capability. Must not be treated as operational truth. |
 | **ASSUMED** | Plausible inference from general Divi knowledge — not directly confirmed on this site. Must not be treated as operational truth. |
 | **UNKNOWN** | Not yet checked. Requires explicit verification before operational use. |
+
+Use `resources/external-sources/elegant-themes-index.md` and `resources/external-sources/divi-5-builder-learning-plan.md` to build official-doc-backed understanding before future LocalWP execution tests.
 
 ---
 

@@ -6,6 +6,18 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 8)
+
+Added official Divi 5 reference source layer:
+
+- Created `resources/external-sources/elegant-themes-index.md` as a curated index of official Elegant Themes / Divi 5 references for Builder interface, responsive systems, Wireframe, Layers, Style Inspector, presets, design variables, Divi Library/portability, modules, Theme Builder, editable template areas, and performance.
+- Created `resources/external-sources/divi-5-builder-learning-plan.md` to stage official-doc ingestion before more LocalWP Builder execution tests.
+- Updated `operator/source-priority.md` to point to the official external source index before new external Divi 5 research.
+- Updated `operator/divi-builder-capabilities.md` to distinguish OFFICIAL-DOC-BACKED knowledge from locally VERIFIED execution knowledge.
+- Updated `HANDOFF.md` and `STATE.md` to pause further Builder execution and make the official learning plan the next recommended path.
+
+---
+
 ## 2026-05-18 (Pass 7)
 
 Added verified Divi Builder capability matrix:

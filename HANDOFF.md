@@ -31,15 +31,18 @@ The Divi layout summarizer foundation is also in place. `cases/spacing-and-paddi
 
 ## Recommended Next Task
 
-Before executing any Divi Builder interaction, check `operator/divi-builder-capabilities.md` first. All VERIFIED capabilities are documented there with date and method. UNKNOWN capabilities must be verified in a live session before being used as a basis for execution.
+Pause further Divi Builder execution tests.
 
-Continue `cases/spacing-and-padding/` through real LocalWP operator analysis: capture screenshots, verify the spacing symptoms visually, apply only the staged safe fix plan if approved, then record the resolved outcome.
+The next task is official Divi 5 source ingestion:
 
-Each resolved case should be evaluated for a candidate `operator/memory.md` entry.
+- Read `resources/external-sources/elegant-themes-index.md`.
+- Follow `resources/external-sources/divi-5-builder-learning-plan.md`.
+- Summarise official Builder interface, responsive, layout/navigation, Wireframe/Layers, presets, design variables, Style Inspector, Theme Builder, module, portability, and performance references.
+- Map official-doc-backed knowledge into operator capabilities without marking it VERIFIED.
 
-When operator reasoning and LocalWP workflows are proven stable, browser automation (Playwright MCP or equivalent) can be introduced as the execution layer against defined cases.
+Before executing any Divi Builder interaction, check `operator/divi-builder-capabilities.md` first. All VERIFIED capabilities are documented there with date and method. UNKNOWN and OFFICIAL-DOC-BACKED capabilities must be locally verified before being used as a basis for execution.
 
-Do not automate Divi directly yet. Do not add snippets, layouts, or QA folders until there is a concrete need.
+Only after the staged learning plan is complete should controlled LocalWP execution tests resume. Do not automate Divi directly yet. Do not continue `cases/spacing-and-padding/`/CASE-001 until explicitly re-approved.
 
 ---
 
@@ -71,6 +74,7 @@ Do:
 - The existing KB is valuable and remains authoritative.
 - Internal Simplicity Tech standards should override external sources.
 - Official Elegant Themes/Divi documentation is trusted as a secondary source.
+- Official source knowledge is not the same as locally verified execution knowledge.
 - Community tutorials and blog posts are lower-trust and require validation.
 - Future browser automation will be useful, but it must follow `operator/browser-automation.md` and `operator/safety-rules.md`.
 
@@ -92,3 +96,5 @@ This project is not an empty scaffold. Read `PROJECT.md`, `STATE.md`, and `AI_WO
 The existing KB architecture is intentional. Add governance on top; do not replace it.
 
 If asked to implement browser automation, first confirm that safety rules, staging context, target URL, and allowed actions are clear.
+
+If asked to resume Builder execution, first confirm that the official Divi 5 learning plan has been completed and that the target action is VERIFIED or explicitly approved for a narrow verification session.

@@ -39,6 +39,8 @@ Current folders:
 
 The `operator/` layer now includes a capability matrix (`operator/divi-builder-capabilities.md`) that separates VERIFIED, ASSUMED, and UNKNOWN Divi Builder interactions.
 
+The `resources/external-sources/` layer now indexes official Elegant Themes / Divi 5 references and defines a staged learning plan before further Builder execution tests.
+
 The original KB folders remain the source knowledge system and should not be moved or renamed. The `operator/` folder is an additive executive layer.
 
 ---
@@ -52,6 +54,8 @@ Important existing files:
 - `build/06_design_logic.md` - Simplicity design decision logic.
 - `audits/00_MASTER_INDEX.md` - audit routing.
 - `resources/template-library.md` - template and reusable resource library.
+- `resources/external-sources/elegant-themes-index.md` - official Elegant Themes / Divi 5 source index.
+- `resources/external-sources/divi-5-builder-learning-plan.md` - staged official-doc ingestion plan before more Builder execution.
 - `workflows/deployment-checklist.md` - launch and staging-first deployment guidance.
 
 ---
@@ -93,6 +97,11 @@ The initial operator layer has also been introduced:
 - `operator/wp-divi-ui-map.md`
 - `operator/divi-builder-capabilities.md`
 
+The official external source layer has been introduced:
+
+- `resources/external-sources/elegant-themes-index.md`
+- `resources/external-sources/divi-5-builder-learning-plan.md`
+
 The Divi layout summarizer foundation now exists:
 
 - `scripts/summarize-divi-layout.js`
@@ -123,6 +132,8 @@ Known risks:
 - Tool-specific references to ChatGPT, Codex, and Claude remain only where they describe supported AI tools or the local folder path.
 - A focused cleanup pass replaced known stale folder references to older planned folders with current KB equivalents.
 - The previously identified broken Markdown link in `build/02_divi5_mechanics.md` has been fixed.
+- The last Builder workflow showed the operator is not yet confident enough navigating Divi 5 Builder layers, viewports, and settings.
+- Official docs can inform the operator, but they do not verify local execution capability.
 - Some docs contain older planning notes that may not match the current architecture.
 Do not perform broad cleanup without a focused scope and reviewable diff.
 
@@ -132,19 +143,22 @@ Do not perform broad cleanup without a focused scope and reviewable diff.
 
 1. Preserve the existing KB architecture.
 2. Use the `operator/` layer as the executive layer for AI work.
-3. Keep browser automation governed by `operator/browser-automation.md`.
-4. Add snippets/layouts/QA libraries only when there is a concrete need.
-5. Keep future documentation cleanup focused and reviewable.
+3. Complete official Divi 5 source ingestion before further Builder execution tests.
+4. Keep browser automation governed by `operator/browser-automation.md`.
+5. Add snippets/layouts/QA libraries only when there is a concrete need.
+6. Keep future documentation cleanup focused and reviewable.
 
 ---
 
 ## Next Recommended Step
 
-The case testing and summarizer foundations are in place. The next steps are demand-driven:
+The case testing and summarizer foundations are in place, but further Builder execution is paused.
 
-- Continue the canonical `cases/spacing-and-padding/` case through real LocalWP visual confirmation and outcome documentation.
-- Create additional real cases in `cases/` as actual Divi issues are encountered on LocalWP.
-- Promote confirmed patterns from resolved cases into `operator/memory.md`.
-- Snippets, layouts, and QA folders remain deferred until there is a concrete need.
+Next:
+
+- Follow `resources/external-sources/divi-5-builder-learning-plan.md`.
+- Summarise official Builder interface, responsive, layout/navigation, Wireframe/Layers, presets/design variables, and capability-mapping docs.
+- Update `operator/divi-builder-capabilities.md` only with clear official-doc-backed context, unknowns, and later verification targets.
+- Resume controlled LocalWP execution tests only after the learning plan is complete.
 
 Do not restructure existing KB folders.
