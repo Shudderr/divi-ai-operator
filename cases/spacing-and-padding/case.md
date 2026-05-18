@@ -2,6 +2,7 @@
 
 **Project:** Simplicity Tech Divi AI Operator  
 **Case Name:** Test1
+**Canonical Example:** Divi layout summarizer workflow
 
 ---
 
@@ -17,9 +18,30 @@
 
 ---
 
+## Canonical Workflow Demonstrated
+
+This case is the canonical example for the current Divi layout summarizer workflow:
+
+```
+home.json
+  -> layout-summary.md
+  -> operator reasoning
+  -> safe fix plan
+  -> QA expectations
+```
+
+- `home.json` is the raw Divi source artifact. Keep it for reproducibility, precise setting lookup, and LocalWP re-import.
+- `layout-summary.md` is the preferred AI context. Start there before opening the raw JSON.
+- Operator reasoning should use the summary first, then consult the raw JSON only when a setting needs exact confirmation.
+- Live visual confirmation is still pending, so this case remains `investigating`.
+
+---
+
 ## Problem Summary
 
 The homepage of a LocalWP Divi test site has multiple spacing and padding inconsistencies. The primary symptoms are: a hero section with uncapped `vw` padding that scales to extreme values at wide viewports; slider columns with large vertical `vw` padding and no mobile/tablet breakpoint overrides; a heading with a `100px` fixed bottom margin that has no responsive adjustment; a testimonials slider with disproportionate bottom padding; and a blurb module mixing margin and padding on the same element. The page was built across at least two Divi versions (4.x and 5.x) and contains no design variable usage for spacing.
+
+**Pending real operator analysis:** these symptoms are inferred from the exported layout data and summarizer output. They still need visual confirmation in LocalWP before any fix is applied.
 
 ---
 
@@ -41,7 +63,7 @@ The homepage of a LocalWP Divi test site has multiple spacing and padding incons
 
 ## Symptoms
 
-The following were identified from analysis of `home.json`. No screenshots are currently available to confirm visual presentation — see Assets section.
+The following were identified from `layout-summary.md` with targeted confirmation in `home.json`. No screenshots are currently available to confirm visual presentation — see Assets section.
 
 **Symptom 1 — Hero section uncapped `vw` top padding, no breakpoint variation:**
 - `padding-top: 20vw` is set explicitly at desktop, tablet, and phone breakpoints as three identical values.
@@ -99,13 +121,16 @@ When resolved:
 
 | Asset | File | Status |
 |---|---|---|
-| Divi layout export | `home.json` | **Available** — used as primary analysis source |
+| Raw Divi layout export | `home.json` | **Available** — source artifact for reproduction and exact setting lookup |
+| Layout summary | `layout-summary.md` | **Available** — preferred AI context for operator reasoning |
 | Custom CSS | `custom.css` | **Not available** — none applied per export |
 | Desktop screenshot | `screenshots/desktop.png` | **Pending** — capture from LocalWP site |
 | Tablet screenshot | `screenshots/tablet.png` | **Pending** |
 | Mobile screenshot | `screenshots/mobile.png` | **Pending** |
 | After-fix export | `home-fixed.json` | **Pending** — export after resolution |
 | Outcome notes | `outcome.md` | **Pending** — complete after resolution |
+
+Use `layout-summary.md` first when briefing the operator. Open `home.json` only to confirm exact values or unsupported structures.
 
 Screenshots are pending. Screenshots should be captured at:
 
@@ -142,7 +167,9 @@ Routed via `operator/task-routing.md` — Responsive Issues and Build Workflow c
 
 ## Operator Analysis
 
-**Analysis performed from JSON export without live browser access. No Divi editing has been performed.**
+**Analysis performed from `layout-summary.md` plus targeted raw JSON confirmation, without live browser access. No Divi editing has been performed.**
+
+**Pending real operator analysis:** validate these findings in LocalWP before editing. The summary identifies likely risk areas, but the actual visual severity depends on the rendered page, viewport, presets, and current Divi version.
 
 The export reveals six distinct spacing problems of varying severity.
 

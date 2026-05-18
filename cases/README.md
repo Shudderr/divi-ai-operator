@@ -110,6 +110,10 @@ By default, the script writes:
 cases/example-case/layout-summary.md
 ```
 
+Canonical example:
+
+- `cases/spacing-and-padding/` demonstrates the complete workflow using `home.json` as the raw Divi source artifact and `layout-summary.md` as the preferred AI context before operator reasoning, fix planning, and QA definition.
+
 Future possibilities, documented for later and not part of the current foundation:
 
 - Risk scoring.

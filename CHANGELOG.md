@@ -6,6 +6,16 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 5)
+
+Added the canonical Divi summarizer case:
+
+- `cases/spacing-and-padding/case.md` now demonstrates the complete workflow from raw Divi export to `layout-summary.md`, operator reasoning, staged safe fix plan, QA expectations, and memory-entry evaluation.
+- `cases/README.md` identifies `cases/spacing-and-padding/` as the canonical summarizer example.
+- `HANDOFF.md` and `STATE.md` now point future sessions toward completing the case through real LocalWP visual confirmation and outcome documentation.
+
+---
+
 ## 2026-05-18 (Pass 4)
 
 Added the Divi layout summarizer foundation:

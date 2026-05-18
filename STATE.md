@@ -89,6 +89,15 @@ The initial operator layer has also been introduced:
 - `operator/task-routing.md`
 - `operator/memory.md`
 
+The Divi layout summarizer foundation now exists:
+
+- `scripts/summarize-divi-layout.js`
+- `cases/spacing-and-padding/home.json`
+- `cases/spacing-and-padding/layout-summary.md`
+- `cases/spacing-and-padding/case.md`
+
+`cases/spacing-and-padding/` is the canonical example for using a raw Divi export as the source artifact and `layout-summary.md` as the preferred AI reasoning artifact.
+
 ---
 
 ## Planned But Not Yet Implemented
@@ -127,9 +136,10 @@ Do not perform broad cleanup without a focused scope and reviewable diff.
 
 ## Next Recommended Step
 
-The case testing foundation is in place. The next steps are demand-driven:
+The case testing and summarizer foundations are in place. The next steps are demand-driven:
 
-- Create real cases in `cases/` as actual Divi issues are encountered on LocalWP.
+- Continue the canonical `cases/spacing-and-padding/` case through real LocalWP visual confirmation and outcome documentation.
+- Create additional real cases in `cases/` as actual Divi issues are encountered on LocalWP.
 - Promote confirmed patterns from resolved cases into `operator/memory.md`.
 - Snippets, layouts, and QA folders remain deferred until there is a concrete need.
 

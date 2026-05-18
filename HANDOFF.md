@@ -25,11 +25,15 @@ Use the operator and case layers as the working system for AI-assisted Divi work
 
 The operator layer is fully documented with eight task examples. The `cases/` system is now in place as the reproducible testing and AI evaluation layer.
 
+The Divi layout summarizer foundation is also in place. `cases/spacing-and-padding/` is the canonical example showing the preferred flow from raw Divi export to `layout-summary.md`, operator reasoning, safe fix plan, and QA expectations.
+
 ---
 
 ## Recommended Next Task
 
-Create real cases in `cases/` as actual Divi issues are encountered on LocalWP. Each resolved case should be evaluated for a candidate `operator/memory.md` entry.
+Continue `cases/spacing-and-padding/` through real LocalWP operator analysis: capture screenshots, verify the spacing symptoms visually, apply only the staged safe fix plan if approved, then record the resolved outcome.
+
+Each resolved case should be evaluated for a candidate `operator/memory.md` entry.
 
 When operator reasoning and LocalWP workflows are proven stable, browser automation (Playwright MCP or equivalent) can be introduced as the execution layer against defined cases.
 
