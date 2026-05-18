@@ -48,11 +48,12 @@ For any Divi layout or styling fix, the required execution order is:
 
 1. Open the page in a browser (LocalWP or staging).
 2. Open Divi Builder.
-3. Inspect the relevant section, row, or column for existing responsive controls.
-4. Apply a Builder setting-level fix if the control exists. Document the setting changed.
-5. If Builder controls are insufficient, document that finding explicitly and seek approval before writing any CSS.
-6. If CSS fallback is approved: use WordPress Additional CSS or page-level CSS — not direct database mutation. Document it as a fallback, not first-line execution.
-7. Never skip steps 1–4 to go directly to CSS or database mutation.
+3. Check `operator/divi-builder-capabilities.md` — confirm the target interaction is VERIFIED. Do not proceed on ASSUMED or UNKNOWN capabilities without a verification step.
+4. Inspect the relevant section, row, or column for existing responsive controls using verified targeting methods (right-panel hierarchy preferred).
+5. Apply a Builder setting-level fix if the control exists. Document the setting changed.
+6. If Builder controls are insufficient, document that finding explicitly and seek approval before writing any CSS.
+7. If CSS fallback is approved: use WordPress Additional CSS or page-level CSS — not direct database mutation. Document it as a fallback, not first-line execution.
+8. Never skip steps 1–5 to go directly to CSS or database mutation.
 
 Operator note: Direct database mutation (via mysql2, wp-cli, or any script) is not an approved path unless explicitly authorised for that specific task. See `operator/memory.md` — Process / Safety for the incident record.
 

@@ -31,6 +31,8 @@ The Divi layout summarizer foundation is also in place. `cases/spacing-and-paddi
 
 ## Recommended Next Task
 
+Before executing any Divi Builder interaction, check `operator/divi-builder-capabilities.md` first. All VERIFIED capabilities are documented there with date and method. UNKNOWN capabilities must be verified in a live session before being used as a basis for execution.
+
 Continue `cases/spacing-and-padding/` through real LocalWP operator analysis: capture screenshots, verify the spacing symptoms visually, apply only the staged safe fix plan if approved, then record the resolved outcome.
 
 Each resolved case should be evaluated for a candidate `operator/memory.md` entry.

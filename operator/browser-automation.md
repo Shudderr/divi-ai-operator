@@ -95,10 +95,11 @@ For browser-assisted changes:
 2. Read the relevant KB files.
 3. Confirm the intended change.
 4. Confirm environment and allowed actions.
-5. Apply the smallest safe change.
-6. Verify desktop, tablet, and mobile if visual.
-7. Report what changed, what was checked, and what still needs review.
-8. Record recurring findings in `operator/memory.md` when useful.
+5. Check `operator/divi-builder-capabilities.md` — confirm the target interaction is VERIFIED before executing it. Do not proceed on ASSUMED or UNKNOWN capabilities.
+6. Apply the smallest safe change.
+7. Verify desktop, tablet, and mobile if visual.
+8. Report what changed, what was checked, and what still needs review.
+9. Record recurring findings in `operator/memory.md` when useful.
 
 ---
 

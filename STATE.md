@@ -37,6 +37,8 @@ Current folders:
 - `troubleshooting/`
 - `workflows/`
 
+The `operator/` layer now includes a capability matrix (`operator/divi-builder-capabilities.md`) that separates VERIFIED, ASSUMED, and UNKNOWN Divi Builder interactions.
+
 The original KB folders remain the source knowledge system and should not be moved or renamed. The `operator/` folder is an additive executive layer.
 
 ---
@@ -88,6 +90,8 @@ The initial operator layer has also been introduced:
 - `operator/browser-automation.md`
 - `operator/task-routing.md`
 - `operator/memory.md`
+- `operator/wp-divi-ui-map.md`
+- `operator/divi-builder-capabilities.md`
 
 The Divi layout summarizer foundation now exists:
 

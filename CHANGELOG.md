@@ -6,6 +6,20 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 7)
+
+Added verified Divi Builder capability matrix:
+
+- Created `operator/divi-builder-capabilities.md` — canonical reference for operationally verified Divi Builder interactions, safe workflows, known limitations, restricted actions, unknown capabilities, and future verification targets.
+- All entries are explicitly tagged VERIFIED / ASSUMED / UNKNOWN with verification date and method where applicable.
+- Key verified capabilities documented: module tab/group structure (Heading module + Page Settings), right-panel hierarchy navigation, per-field responsive breakpoint toggle (hover behaviour), Builder Bar buttons, Page Bar controls, canvas structure (9 sections, 15 rows, iframe ID), module types present, entry path to Visual Builder, and Backwards Compatibility Mode status.
+- Key unknowns identified: canvas hover-to-select reliability, Layers/Wireframe View panel internals, Save Dropdown sub-options, Tablet/Phone canvas widths, section type breakdown, module settings consistency across non-Heading module types.
+- Restricted actions table formalises the implicit rules already established in `operator/safety-rules.md` and `CLAUDE.md`.
+- Updated `operator/browser-automation.md` — Required Workflow now includes a step to check the capability matrix before executing any browser interaction.
+- Updated `operator/safety-rules.md` — Implementation Execution Order now includes a step to verify target interactions against the capability matrix before proceeding.
+
+---
+
 ## 2026-05-18 (Pass 6)
 
 Validated the canonical Divi spacing case against the LocalWP page:
