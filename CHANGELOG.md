@@ -6,6 +6,17 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 14)
+
+Documented state-aware Divi browser automation rules from the read-only verification session:
+
+- Updated `operator/browser-automation.md` with the required interaction loop: act, wait, verify state changed, re-query UI, then continue or stop. Added explicit warnings that click success is not task success and that DOM-at-rest must be distinguished from DOM-after-interaction.
+- Updated `operator/divi-builder-capabilities.md` with VERIFIED notes for iframe canvas separation, hover-injected canvas controls, Layers asynchronous expansion/state verification requirements, and multi-panel coexistence (Layers plus Section settings). Left targeting reliability and timing details as NEEDS VERIFICATION or UNKNOWN.
+- Updated `operator/safety-rules.md` to require state verification after every browser interaction and to prohibit treating successful clicks/selectors as proof of task completion.
+- Updated `HANDOFF.md` and `STATE.md` to pause further browser control, record the verified behaviours, and list unresolved unknowns before future Builder sessions resume.
+
+---
+
 ## 2026-05-18 (Pass 13)
 
 Completed Stage 5 — mapped official Divi 5 learning summaries into operator guidance:

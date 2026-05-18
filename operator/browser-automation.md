@@ -12,6 +12,8 @@ This file defines how Codex, Chrome, browser automation, or future browser-based
 
 Browser automation is useful, but it is not the intelligence layer.
 
+Browser automation must also be state-aware. A clicked button, completed tool call, or successful selector match is not proof that Divi changed state.
+
 ---
 
 ## Browser Automation Is
@@ -102,6 +104,39 @@ For browser-assisted changes:
 9. Verify desktop, tablet, and mobile if visual.
 10. Report what changed, what was checked, and what still needs review.
 11. Record recurring findings in `operator/memory.md` when useful.
+
+---
+
+## State-Aware Interaction Rule
+
+Every browser automation interaction with Divi must follow this flow:
+
+1. Act.
+2. Wait.
+3. Verify state changed.
+4. Re-query UI.
+5. Continue or stop.
+
+Do not treat click success as task success.
+
+For Divi specifically:
+
+- Verify visible panel, modal, tree, field, breakpoint, or canvas state after each interaction.
+- Re-query the DOM after state changes; do not reuse stale element assumptions.
+- Distinguish **DOM-at-rest** from **DOM-after-interaction**. Some controls do not exist until hover, mouseover, focus, expansion, or another interaction injects them.
+- Do not conclude a control is missing from a pre-hover DOM query if the control is known or suspected to be hover-injected.
+- Stop and report when visible state does not match the expected state after an interaction.
+
+Known state-aware cases from the 2026-05-18 read-only verification session:
+
+| Behaviour | Status | Operator rule |
+|-----------|--------|---------------|
+| Layers "Open All" can appear not to expand immediately | VERIFIED | Wait, then verify the Layers tree state before proceeding |
+| Layers panel state can update asynchronously | VERIFIED | Re-query panel state after interaction |
+| Multiple panels can coexist, such as Layers plus Section settings | VERIFIED | Confirm the active target panel before clicking |
+| Canvas content is separated into iframe `#et-vb-app-frame` | VERIFIED | Query canvas content inside the iframe, not from the parent document |
+| Canvas hover controls may not exist in the DOM at rest | VERIFIED | Hover/mouseover before searching for hover controls |
+| Hover controls are dynamically injected after hover/mouseover | VERIFIED | Treat pre-hover and post-hover DOM as different states |
 
 ---
 

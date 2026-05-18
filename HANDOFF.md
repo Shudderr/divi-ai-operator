@@ -31,9 +31,11 @@ The Divi layout summarizer foundation is also in place. `cases/spacing-and-paddi
 
 ## Recommended Next Task
 
-Pause further Divi Builder execution tests.
+Pause further Divi Builder execution tests and browser control.
 
-The next task is official Divi 5 source ingestion:
+The latest read-only verification session has been documented. Future Divi browser automation must be state-aware: act, wait, verify state changed, re-query UI, then continue or stop. Do not treat click success as task success.
+
+Official Divi 5 source ingestion context:
 
 - Read `resources/external-sources/elegant-themes-index.md`.
 - Follow `resources/external-sources/divi-5-builder-learning-plan.md`.
@@ -47,7 +49,7 @@ The next task is official Divi 5 source ingestion:
 
 The staged official learning plan (Stages 1–5) is complete. The operator is now equipped with official-doc-backed conceptual knowledge for interface, responsive, navigation, presets/global systems, and operator mapping.
 
-The next session should be a **narrow, read-only verification pass** against the LocalWP site targeting the Priority 1 and Priority 2 items from `resources/external-sources/summaries/stage-5-operator-mapping.md` §8:
+The next browser session, when explicitly resumed, should remain a **narrow, read-only verification pass** against the LocalWP site targeting unresolved Priority 1 and Priority 2 items from `resources/external-sources/summaries/stage-5-operator-mapping.md` §8:
 
 1. Style Inspector access and read-only behaviour.
 2. Layers View structural tree.
@@ -59,6 +61,20 @@ The next session should be a **narrow, read-only verification pass** against the
 No edits during that session. Each verified item should be recorded in `operator/divi-builder-capabilities.md` with date, method, and caveats.
 
 Before executing any Divi Builder interaction, check `operator/divi-builder-capabilities.md` first. All VERIFIED capabilities are documented there with date and method. UNKNOWN and OFFICIAL-DOC-BACKED capabilities must be locally verified before being used as a basis for execution.
+
+Current locally VERIFIED browser automation behaviours from the 2026-05-18 read-only verification session:
+
+- Canvas content lives inside iframe `#et-vb-app-frame`.
+- Canvas hover controls may be absent from DOM-at-rest and dynamically injected after hover/mouseover.
+- Layers "Open All" can appear not to expand immediately; Layers state may update asynchronously and requires visible state verification.
+- Multiple Builder panels can coexist, including Layers plus Section settings.
+
+Unknowns left unresolved:
+
+- Stable timing/selectors for Layers expanded/collapsed state.
+- Whether Layers tree targeting is reliable for safe element selection.
+- Wireframe View internal structure and targeting value.
+- Which panel combinations can coexist beyond the observed Layers plus Section settings case.
 
 Only after the staged learning plan is complete should controlled LocalWP execution tests resume. Do not automate Divi directly yet. Do not continue `cases/spacing-and-padding/`/CASE-001 until explicitly re-approved.
 
@@ -115,4 +131,4 @@ The existing KB architecture is intentional. Add governance on top; do not repla
 
 If asked to implement browser automation, first confirm that safety rules, staging context, target URL, and allowed actions are clear.
 
-If asked to resume Builder execution, first confirm that the official Divi 5 learning plan has been completed and that the target action is VERIFIED or explicitly approved for a narrow verification session.
+If asked to resume Builder execution, first confirm that the official Divi 5 learning plan has been completed and that the target action is VERIFIED or explicitly approved for a narrow verification session. During any browser session, verify state after every interaction before proceeding.

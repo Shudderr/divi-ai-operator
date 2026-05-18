@@ -113,8 +113,10 @@ Two structural navigation buttons were confirmed present in the Builder Bar:
 | Wireframe View | `et-vb-builder-bar-button--divi-wireframe-view` | Block-diagram structural view |
 
 **Caveats:**
-- Button presence confirmed. Panel contents were NOT opened during discovery — inner structure is UNKNOWN.
-- Do not treat Layers or Wireframe View panel internals as verified.
+- Button presence was confirmed during initial discovery.
+- Layers panel behaviour was partially observed in a later read-only verification session; see Section 1.10 and Section 3.4.
+- Wireframe View panel internals remain UNKNOWN.
+- Do not treat Layers targeting or Wireframe View panel internals as verified.
 
 ---
 
@@ -176,7 +178,78 @@ Heading, Icon, Text, Number Counter, Image, Button, Blurb, Accordion.
 
 ---
 
-### 1.8 Entry Path to Visual Builder
+### 1.8 Canvas Iframe Separation
+
+**Status:** VERIFIED - 2026-05-18 (read-only browser verification session)
+
+Canvas page content lives inside iframe `#et-vb-app-frame`.
+
+Operational implications:
+
+- Querying the parent Visual Builder DOM is not sufficient for canvas content.
+- Canvas selectors must be run inside the iframe context.
+- Parent Builder UI state and canvas iframe state must be treated as separate UI surfaces.
+
+**Caveats:**
+- This verifies iframe separation only. It does not verify that any specific canvas hover, select, insert, or edit control is reliable.
+
+---
+
+### 1.9 Hover-Injected Canvas Controls
+
+**Status:** VERIFIED - 2026-05-18 (read-only browser verification session)
+
+Canvas hover controls may not exist in the DOM while the canvas is at rest. Hover/mouseover can dynamically inject controls after interaction.
+
+Operational implications:
+
+- DOM queries before hover can falsely report missing controls.
+- Browser automation must distinguish DOM-at-rest from DOM-after-interaction.
+- Hover-dependent controls require: hover or mouseover, wait, verify visible control state, then re-query.
+
+**Caveats:**
+- This verifies the injection pattern, not reliable editing through those controls.
+- Canvas hover-to-select remains restricted by the reliability caveat in Section 3.1.
+
+---
+
+### 1.10 Layers Panel Asynchronous State Behaviour
+
+**Status:** VERIFIED - 2026-05-18 (read-only browser verification session)
+
+The Layers panel can update asynchronously. The Layers "Open All" action can appear not to expand immediately after click.
+
+Operational implications:
+
+- Do not assume the Layers tree expanded because the click action completed.
+- After clicking "Open All" or any Layers expansion control, wait and verify the visible tree state.
+- Re-query the Layers panel after expansion/collapse interactions.
+- If the expected tree state is not visible, stop and report the mismatch instead of continuing to target elements.
+
+**Caveats:**
+- Full Layers tree targeting reliability is still NEEDS VERIFICATION.
+- Timing characteristics and stable selectors for expanded/collapsed state are UNKNOWN.
+
+---
+
+### 1.11 Multi-Panel Coexistence
+
+**Status:** VERIFIED - 2026-05-18 (read-only browser verification session)
+
+Multiple Builder panels can coexist, including Layers plus a Section settings panel.
+
+Operational implications:
+
+- Browser automation must identify which panel is active before acting.
+- Do not assume that opening one panel closed another.
+- Click targets must be scoped to the intended panel or iframe context.
+
+**Caveats:**
+- Which panel combinations are possible beyond Layers plus Section settings remains UNKNOWN.
+
+---
+
+### 1.12 Entry Path to Visual Builder
 
 **Status:** VERIFIED — 2026-05-18
 
@@ -194,7 +267,7 @@ The "Edit With Divi" link contains a nonce and **expires** — always generate a
 
 ---
 
-### 1.9 Divi Mode
+### 1.13 Divi Mode
 
 **Status:** VERIFIED — 2026-05-18
 
@@ -273,6 +346,24 @@ All changes on this project must be made against `sampleproblem-pages.local` (lo
 
 ---
 
+### 2.6 State-Aware Browser Automation Flow
+
+**Status:** VERIFIED as required execution order - 2026-05-18
+
+Every browser automation step against Divi must follow:
+
+1. Act.
+2. Wait.
+3. Verify state changed.
+4. Re-query UI.
+5. Continue or stop.
+
+Do not treat click success as task success.
+
+This applies especially to Layers expansion, panel switching, iframe canvas inspection, hover-injected controls, responsive breakpoint switching, and settings modal navigation.
+
+---
+
 ## 3. Verified Limitations
 
 ### 3.1 Canvas Overlay Selection Is Unreliable
@@ -289,6 +380,8 @@ Clicking canvas overlays directly tends to select the wrong element level. The r
 
 The per-field responsive breakpoint toggle (§1.3) is only visible on hover. Controls that depend on hover state cannot be reliably targeted by automation tools that do not simulate hover.
 
+The same state-aware rule now applies to canvas hover controls verified during the read-only browser session: controls may be absent from DOM-at-rest and injected only after hover/mouseover.
+
 ---
 
 ### 3.3 Save Dropdown Sub-Options Are Unknown
@@ -299,11 +392,20 @@ The Save Dropdown button exists adjacent to the Save button. Its sub-options wer
 
 ---
 
-### 3.4 Layers and Wireframe View Panel Contents Are Unknown
+### 3.4 Layers Full Targeting Reliability Needs Verification
 
-**Status:** UNKNOWN — buttons confirmed present, panels not opened
+**Status:** NEEDS VERIFICATION - Layers panel behaviour partially observed 2026-05-18
 
-The Layers panel and Wireframe View panel were confirmed available in the Builder Bar (§1.4), but their internal structure was not verified. Do not rely on their contents without a dedicated verification session.
+The Layers panel can coexist with settings panels and can update asynchronously. The "Open All" action can appear not to expand immediately.
+
+Do not rely on Layers for targeted editing until a dedicated verification session confirms:
+
+- Stable expanded/collapsed state detection.
+- Reliable element selection from the Layers tree.
+- Reliable panel scoping when another settings panel is also open.
+- Safe recovery if expansion state does not change as expected.
+
+Wireframe View panel contents remain UNKNOWN.
 
 ---
 
@@ -363,8 +465,8 @@ The following capabilities have not been verified and must not be treated as ope
 
 | Capability | Why It Matters |
 |------------|---------------|
-| Canvas hover-to-select interaction | Whether clicking/hovering canvas elements reliably selects the correct element level |
-| Layers panel internal structure | Whether Layers provides a usable structural tree for targeted element selection |
+| Canvas hover-to-select interaction | Hover-injected controls are verified, but reliable target selection/editing is not |
+| Layers panel full targeting reliability | Async state and multi-panel coexistence are verified; stable operational targeting still needs verification |
 | Wireframe View internal structure | Whether Wireframe View is useful for structural inspection |
 | Save Dropdown sub-options | What options exist and whether any are safe to use |
 | Tablet canvas width | What responsive canvas width Divi uses at Tablet breakpoint |
@@ -374,6 +476,8 @@ The following capabilities have not been verified and must not be treated as ope
 | Module settings consistency across module types | Whether Content/Design/Advanced group names match for Text, Button, Blurb, Image, etc. |
 | Undo / history workflow | Whether Divi Builder has a reliable undo path and how many steps it supports |
 | Codex/browser automation interaction reliability | Which UI affordances Playwright or Codex can reliably interact with via automation |
+| Layers expansion timing and selectors | How to detect expanded/collapsed state reliably after "Open All" or per-node expansion |
+| Additional multi-panel combinations | Which panel combinations can coexist beyond Layers plus Section settings |
 | Global section / global module behaviour | Visual indicators and sync behaviour (Divi Library currently empty — no globals to test) |
 | Divi 5 Migrator outcome | What the page structure looks like after migration from Divi 4 to Divi 5 format |
 | Front-end admin bar "Edit With Divi" nonce expiry | How long the nonce stays valid |
@@ -389,7 +493,7 @@ The following should be verified during dedicated live browser sessions. Each ve
 ### High Priority
 
 - **Canvas element selection** — verify whether hover-to-select is reliable or always requires right-panel targeting.
-- **Layers panel contents** — open the panel and document the structural tree for the home page.
+- **Layers panel targeting reliability** — verify expanded/collapsed state detection, element selection, and safe panel scoping after asynchronous updates.
 - **Wireframe View contents** — open the panel and document what structural blocks are shown.
 - **Tablet and Phone canvas widths** — record the actual pixel values from the width input field.
 - **Save Dropdown sub-options** — open and document all options before any are used.

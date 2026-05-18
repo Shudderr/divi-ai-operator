@@ -25,6 +25,7 @@ When unsure, slow down, route to the right documentation, work on staging, and a
 - Document all changes.
 - Report assumptions, risks, and verification.
 - Keep changes scoped to the requested task.
+- For browser automation, act, wait, verify state changed, re-query UI, then continue or stop.
 
 ---
 
@@ -37,6 +38,7 @@ When unsure, slow down, route to the right documentation, work on staging, and a
 - Delete layouts, sections, presets, snippets, or documentation.
 - Apply Find & Replace across a whole site without preview and backup.
 - Treat browser automation as permission to improvise.
+- Treat a successful click or selector match as proof that the intended UI state changed.
 - Restructure this repository.
 - Write directly to the WordPress database (wp_posts, wp_postmeta, wp_options, or any table) for any reason, including local environments.
 
@@ -49,13 +51,14 @@ For any Divi layout or styling fix, the required execution order is:
 1. Open the page in a browser (LocalWP or staging).
 2. Open Divi Builder.
 3. Check `operator/divi-builder-capabilities.md` — confirm the target interaction is VERIFIED. Do not proceed on ASSUMED or UNKNOWN capabilities without a verification step.
-4. Confirm the target element's full parent chain (Section type → Row → Column → Module) using structure-first navigation — right-panel hierarchy (VERIFIED), Layers View (verify locally first), or breadcrumbs in an open settings modal (verify locally first). Do not rely on canvas-only selection.
+4. Confirm the target element's full parent chain (Section type → Row → Column → Module) using structure-first navigation — right-panel hierarchy (VERIFIED), Layers View (full targeting still needs verification), or breadcrumbs in an open settings modal (verify locally first). Do not rely on canvas-only selection.
 5. If the target field has visual styling, confirm whether the value is local, preset-controlled, or variable-referenced before editing. Use the Style Inspector when locally verified. If the value is preset-controlled or variable-referenced, assess propagation scope before deciding whether to apply a local override or edit the global source.
 6. Inspect the relevant section, row, or column for existing responsive controls using verified targeting methods (right-panel hierarchy preferred).
-7. Apply a Builder setting-level fix if the control exists. Document the setting changed.
-8. If Builder controls are insufficient, document that finding explicitly and seek approval before writing any CSS.
-9. If CSS fallback is approved: use WordPress Additional CSS or page-level CSS — not direct database mutation. Document it as a fallback, not first-line execution.
-10. Never skip steps 1–7 to go directly to CSS or database mutation.
+7. For each browser interaction, act, wait, verify visible/state change, re-query the relevant UI surface, then continue or stop. Do not treat click success as task success.
+8. Apply a Builder setting-level fix if the control exists. Document the setting changed.
+9. If Builder controls are insufficient, document that finding explicitly and seek approval before writing any CSS.
+10. If CSS fallback is approved: use WordPress Additional CSS or page-level CSS — not direct database mutation. Document it as a fallback, not first-line execution.
+11. Never skip steps 1–8 to go directly to CSS or database mutation.
 
 Operator note: Direct database mutation (via mysql2, wp-cli, or any script) is not an approved path unless explicitly authorised for that specific task. See `operator/memory.md` — Process / Safety for the incident record.
 

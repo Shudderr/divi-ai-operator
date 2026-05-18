@@ -116,6 +116,14 @@ The Divi layout summarizer foundation now exists:
 
 `cases/spacing-and-padding/` is the canonical example for using a raw Divi export as the source artifact and `layout-summary.md` as the preferred AI reasoning artifact.
 
+The latest read-only Divi Builder verification findings have been added to the operator layer:
+
+- Browser automation must follow: act, wait, verify state changed, re-query UI, continue or stop.
+- Canvas content is separated into iframe `#et-vb-app-frame`.
+- Canvas hover controls can be absent from DOM-at-rest and injected after hover/mouseover.
+- Layers "Open All" can appear not to expand immediately; Layers state may update asynchronously.
+- Multiple Builder panels can coexist, including Layers plus Section settings.
+
 ---
 
 ## Planned But Not Yet Implemented
@@ -139,6 +147,9 @@ Known risks:
 - The previously identified broken Markdown link in `build/02_divi5_mechanics.md` has been fixed.
 - The last Builder workflow showed the operator is not yet confident enough navigating Divi 5 Builder layers, viewports, and settings.
 - Official docs can inform the operator, but they do not verify local execution capability.
+- Click success is not task success. Divi UI state can update asynchronously or only after interaction-triggered DOM injection.
+- Browser automation must distinguish DOM-at-rest from DOM-after-interaction, especially for canvas hover controls.
+- Layers can require post-click state verification before the tree can be trusted.
 - Some docs contain older planning notes that may not match the current architecture.
 Do not perform broad cleanup without a focused scope and reviewable diff.
 
@@ -148,8 +159,8 @@ Do not perform broad cleanup without a focused scope and reviewable diff.
 
 1. Preserve the existing KB architecture.
 2. Use the `operator/` layer as the executive layer for AI work.
-3. Complete official Divi 5 source ingestion before further Builder execution tests.
-4. Keep browser automation governed by `operator/browser-automation.md`.
+3. Use the completed official Divi 5 source ingestion as context before further Builder execution tests.
+4. Keep browser automation governed by `operator/browser-automation.md`, including the state-aware act/wait/verify/re-query flow.
 5. Add snippets/layouts/QA libraries only when there is a concrete need.
 6. Keep future documentation cleanup focused and reviewable.
 
@@ -177,8 +188,9 @@ The official Divi 5 learning plan (Stages 1–5) is complete.
 
 Next:
 
-- Resume controlled LocalWP execution as a **read-only verification pass**.
-- Verify Priority 1 targets from `stage-5-operator-mapping.md` §8: Style Inspector, Layers View, Wireframe View, breadcrumbs, Responsive Editor, Tablet/Phone canvas widths.
+- Pause further browser control until explicitly resumed.
+- Resume controlled LocalWP execution only as a **read-only verification pass**.
+- Verify unresolved Priority 1 targets from `stage-5-operator-mapping.md` §8: Style Inspector, Wireframe View, breadcrumbs, Responsive Editor, Tablet/Phone canvas widths, and remaining Layers reliability details.
 - Record each verified item in `operator/divi-builder-capabilities.md` with date, method, and caveats.
 - Do not resume CASE-001 editing until Priority 1 and Priority 2 verification targets are complete.
 
