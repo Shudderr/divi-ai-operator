@@ -104,6 +104,7 @@ The official external source layer has been introduced:
 - `resources/external-sources/summaries/stage-1-builder-interface.md`
 - `resources/external-sources/summaries/stage-2-responsive-system.md`
 - `resources/external-sources/summaries/stage-3-navigation-and-traversal.md`
+- `resources/external-sources/summaries/stage-4-presets-and-global-systems.md`
 
 The Divi layout summarizer foundation now exists:
 
@@ -163,11 +164,13 @@ Stage 2 is complete. `resources/external-sources/summaries/stage-2-responsive-sy
 
 Stage 3 is complete. `resources/external-sources/summaries/stage-3-navigation-and-traversal.md` summarises official navigation and traversal docs covering Layers View, Wireframe View, core hierarchy structure, nested rows, specialty sections, canvas navigation risks, structural traversal workflows, structural failure patterns, and candidate capability-matrix items — all marked official-doc-backed only.
 
+Stage 4 is complete. `resources/external-sources/summaries/stage-4-presets-and-global-systems.md` summarises official presets and global systems docs covering Element Presets, Option Group Presets, stacked/nested presets, Preset Manager, Design Variables, Variable Generator, Style Inspector, Theme Builder templates, dynamic content, inheritance/propagation models, rollback complexity, common global-system failure patterns, and candidate capability-matrix items — all marked official-doc-backed only.
+
 Next:
 
-- Continue with Stage 4 in `resources/external-sources/divi-5-builder-learning-plan.md`.
-- Summarise official presets and design variables docs, including Style Inspector, before continuing to capability mapping.
-- Update `operator/divi-builder-capabilities.md` only with clear official-doc-backed context, unknowns, and later verification targets.
-- Resume controlled LocalWP execution tests only after the learning plan is complete.
+- Continue with Stage 5 in `resources/external-sources/divi-5-builder-learning-plan.md`.
+- Map official-doc-backed knowledge from Stages 1–4 into `operator/divi-builder-capabilities.md` under a clearly separated official-doc-backed section.
+- Do not mark any Stage 1–4 item as VERIFIED; keep VERIFIED entries limited to behaviours already observed locally.
+- Resume controlled LocalWP execution tests only after Stage 5 mapping is complete.
 
 Do not restructure existing KB folders.

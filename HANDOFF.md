@@ -40,9 +40,9 @@ The next task is official Divi 5 source ingestion:
 - Stage 1 Builder interface summary is complete: `resources/external-sources/summaries/stage-1-builder-interface.md`.
 - Stage 2 responsive system summary is complete: `resources/external-sources/summaries/stage-2-responsive-system.md`.
 - Stage 3 navigation and traversal summary is complete: `resources/external-sources/summaries/stage-3-navigation-and-traversal.md`.
-- Continue with Stage 4 presets and design variables docs.
-- Summarise official presets, design variables, Style Inspector, Theme Builder, module, portability, and performance references.
-- Map official-doc-backed knowledge into operator capabilities without marking it VERIFIED.
+- Stage 4 presets and global systems summary is complete: `resources/external-sources/summaries/stage-4-presets-and-global-systems.md`.
+- Continue with Stage 5 — map official-doc-backed knowledge across Stages 1–4 into the capability matrix.
+- Update `operator/divi-builder-capabilities.md` only where a clearly separated official-doc-backed section exists and additions cannot be mistaken for VERIFIED execution capability.
 
 Before executing any Divi Builder interaction, check `operator/divi-builder-capabilities.md` first. All VERIFIED capabilities are documented there with date and method. UNKNOWN and OFFICIAL-DOC-BACKED capabilities must be locally verified before being used as a basis for execution.
 

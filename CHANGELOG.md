@@ -6,6 +6,19 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 12)
+
+Added Stage 4 Divi presets and global systems summary:
+
+- Created `resources/external-sources/summaries/stage-4-presets-and-global-systems.md` as the official-doc-backed presets and global systems learning summary for the operator.
+- Summarised official Divi 5 sources covering: Element Presets (default presets, preset reuse, preset override behaviour, local override isolation, preset drift), Option Group Presets (granular style reuse at the field-group level), stacked and nested presets (inheritance order, layer conflicts), Preset Manager (audit panel, preset preview), Design Variables/Global Variables (variable families, referencing, sitewide update propagation, compound variable chains, Variable Generator fluid/fixed tokens), Style Inspector (pre-edit audit workflow, style source attribution), Theme Builder (template scope, template assignment conditions, editable front-end template areas, dynamic content), and inheritance/propagation concepts (layer-by-layer override model, rollback complexity for global changes).
+- Documented propagation risk model: local override < preset < design variable < Theme Builder template, each wider in scope. Explained why automation without scope awareness can trigger sitewide regressions.
+- Captured operator implications, common global-system failure patterns, do/don't rules, unknowns requiring local verification (Style Inspector, Preset Manager, Variable Manager access and read-only behaviour), and candidate capability-matrix items clearly marked OFFICIAL-DOC-BACKED only.
+- Updated `HANDOFF.md` and `STATE.md` to mark Stage 4 complete and point the next step at Stage 5 capability-matrix mapping.
+- Did not update `operator/divi-builder-capabilities.md`; no new execution capability was locally verified.
+
+---
+
 ## 2026-05-18 (Pass 11)
 
 Added Stage 3 Divi navigation and traversal summary:
