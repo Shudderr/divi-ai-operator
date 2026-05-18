@@ -23,6 +23,12 @@ A production-ready knowledge base covering **95% of the Divi 5 development lifec
 
 ## 🚀 Quick Start
 
+## Prompt Use
+
+Follow the WordPress + Divi Operator Workflow in CLAUDE.md.
+Use @browser first.
+Do not use CSS fallback until the Divi Builder controls have been checked and documented.
+
 ### AI Operator Users
 
 Start with [`operator/README.md`](./operator/README.md) for source priority, task routing, safety rules, browser automation boundaries, and operational memory.
