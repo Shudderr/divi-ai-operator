@@ -3,7 +3,7 @@
 **Project:** Simplicity Tech Divi AI Operator  
 **Site:** sampleproblem-pages.local (WP 6.9.4 · Divi 5.5.2 · Backwards Compatibility Mode)  
 **Status:** Active operational reference  
-**Last Updated:** 2026-05-18
+**Last Updated:** 2026-05-18 (layers-view-001 verification session)
 
 ---
 
@@ -213,26 +213,144 @@ Operational implications:
 
 ---
 
-### 1.10 Layers Panel Asynchronous State Behaviour
+### 1.10 Layers Panel — Full Targeting Reliability
 
-**Status:** VERIFIED - 2026-05-18 (read-only browser verification session)
+**Status:** VERIFIED — 2026-05-18 (layers-view-001 dedicated verification session)
 
-The Layers panel can update asynchronously. The Layers "Open All" action can appear not to expand immediately after click.
+The Layers panel is reliable as a primary structure-first traversal method. All 8 verification questions from the layers-view-001 session returned VERIFIED.
 
-Operational implications:
+#### Opening Layers
 
-- Do not assume the Layers tree expanded because the click action completed.
-- After clicking "Open All" or any Layers expansion control, wait and verify the visible tree state.
-- Re-query the Layers panel after expansion/collapse interactions.
-- If the expected tree state is not visible, stop and report the mismatch instead of continuing to target elements.
+Click the button with class `.et-vb-builder-bar-button--divi-layers` via JS (the button does not appear in the a11y snapshot). Wait for "Search Layout", "Open All", and section names to appear before proceeding.
+
+#### "Open All" Expansion
+
+Clicking "Open All" expands the entire tree to leaf level in one operation. The button label changes to "Close All" immediately when expansion completes. In the layers-view-001 session this was synchronous. A prior session (vs-001) showed asynchronous behaviour. Always apply wait/re-query after clicking "Open All" and verify "Close All" appears and child elements are present before targeting anything.
+
+#### Section Expand/Collapse — Two-Button Targeting Rule
+
+Each section row in Layers has two distinct click targets:
+
+| Target | Label | Effect |
+|--------|-------|--------|
+| Outer section row button | "Collapse [Name]" or "Expand [Name]" | Opens section settings panel — does NOT toggle expand/collapse |
+| Inner toggle sub-button (child of the row) | "Collapse" or "Expand" | Toggles tree expand/collapse |
+
+**Rule for browser automation:** To collapse or expand a section tree node, target the **inner** "Collapse"/"Expand" sub-button. Targeting the outer row button opens the section settings panel instead.
+
+#### Module Selection from Layers
+
+Clicking a Module-level button in the Layers tree (e.g., "Heading", "Icon", "Button") opens the correct settings panel for that module. Canvas auto-scrolls to the selected element.
+
+State verification: wait for the settings panel heading to change from the previous element type to the newly selected module type before reading panel state.
+
+#### Layers Expansion State Indicators
+
+| Layers state | Outer button label | Child nodes in snapshot |
+|-------------|-------------------|------------------------|
+| Section collapsed | "Expand [Name]" | None |
+| Section expanded | "Collapse [Name]" | Row, Column, Module nodes visible |
+| Full tree collapsed | "Open All" | Sections only |
+| Full tree expanded | "Close All" | All sections, rows, columns, modules |
 
 **Caveats:**
-- Full Layers tree targeting reliability is still NEEDS VERIFICATION.
-- Timing characteristics and stable selectors for expanded/collapsed state are UNKNOWN.
+- "Open All" may be asynchronous under some load conditions (prior session observation). Always wait and verify.
+- The outer section-row button opening settings instead of toggling collapse is non-obvious — it is an intentional dual-click-target design.
+- The builder bar Layers button is not in the a11y snapshot; it must be targeted via JS querySelector.
 
 ---
 
-### 1.11 Multi-Panel Coexistence
+### 1.11 Layers Panel — Element Type Labels
+
+**Status:** VERIFIED — 2026-05-18 (layers-view-001 verification session)
+
+The Layers tree uses distinct labels for all Divi hierarchy levels. After "Open All" expansion on the home page:
+
+| Element Type | Layers label | Example in tree |
+|---|---|---|
+| Section (Regular) | "Collapse [Name]" / "Expand [Name]" | "Collapse Header" |
+| Specialty Section | Same label as Regular — identified structurally | "Collapse Stats" — no Row node under it |
+| Row | "Collapse Row" | Under Header, Listings, etc. |
+| Column | "Collapse Column" | Under Row |
+| Row-Inner (nested row) | "Collapse Inner Row" | Under Column in Stats Specialty Section |
+| Column-Inner | "Collapse Inner Column" | Under Inner Row |
+| Module | Module type name only | "Heading", "Icon", "Text", "Button", "Blurb", "Image", "Person", "Number Counter", "Accordion", "Slider" |
+| Accordion Item | "Accordion Item" | Child of Collapse Accordion |
+| Slider Slide | Slide text content | Child of Collapse Slider |
+
+**Specialty Section identification rule:** In Layers, a Specialty Section is identified by the presence of "Collapse Column" directly under the section node — with no "Collapse Row" intermediary. There is no badge or special icon marking the section type in the section-level label itself.
+
+**Caveats:**
+- Regular sections and Specialty sections have the same section-row label format. Only the child structure reveals the type.
+- "Open All" must complete before child structure is visible.
+
+---
+
+### 1.12 Breadcrumbs in Settings Panel
+
+**Status:** VERIFIED — 2026-05-18 (layers-view-001 verification session)
+
+When an element is selected (via Layers or other method) and its settings panel is open, the top of the settings panel shows a breadcrumb trail:
+
+```
+Page → Section → [Row →] Column → Module
+```
+
+Each breadcrumb level is a clickable button. Clicking a breadcrumb level navigates up the hierarchy and opens that parent's settings panel.
+
+**Verified breadcrumb for:** Heading module in Stats Specialty Section:
+```
+Page → Section → Column → Heading
+```
+The absence of "Row" in this breadcrumb confirms the Module Column / Specialty Section structure.
+
+**Operational use:** After selecting an element, read the breadcrumb to confirm the full parent chain before making any edits.
+
+**Caveats:**
+- Only verified for a Heading module inside a Specialty Section's Module Column. Breadcrumb for elements inside Regular Section Row → Column structures not separately verified in this session (but expected to show Row in the chain).
+- Clicking breadcrumb levels to navigate up was not tested as an edit path — read-only only.
+
+---
+
+### 1.13 Specialty Section Confirmed on Home Page
+
+**Status:** VERIFIED — 2026-05-18 (layers-view-001 verification session)
+
+The **Stats section** on the home page is a Specialty Section. Confirmed via Layers tree structure and breadcrumb.
+
+Specialty Section structure (Stats):
+```
+Stats [Specialty Section]
+├── Column [Module Column]
+│   └── Heading
+└── Column [Row Column]
+    ├── Inner Row
+    │   └── Inner Column → Text
+    └── Inner Row
+        ├── Inner Column → Number Counter
+        ├── Inner Column → Number Counter
+        └── Inner Column → Number Counter
+```
+
+This resolves capability matrix §3.6 (Section Type Breakdown Unknown).
+
+**Full home page section type breakdown (now verified):**
+
+| Section | Type |
+|---|---|
+| Header | Regular |
+| Stats | Specialty |
+| Listings | Regular |
+| Categories | Regular |
+| Features | Regular |
+| About | Regular |
+| Team | Regular |
+| Testimonials | Regular |
+| Footer | Regular |
+
+---
+
+### 1.14 Multi-Panel Coexistence
 
 **Status:** VERIFIED - 2026-05-18 (read-only browser verification session)
 
@@ -392,20 +510,17 @@ The Save Dropdown button exists adjacent to the Save button. Its sub-options wer
 
 ---
 
-### 3.4 Layers Full Targeting Reliability Needs Verification
+### 3.4 Layers Section-Row Click Opens Settings — Not Collapse Toggle
 
-**Status:** NEEDS VERIFICATION - Layers panel behaviour partially observed 2026-05-18
+**Status:** VERIFIED behaviour — 2026-05-18 (layers-view-001 verification session)
 
-The Layers panel can coexist with settings panels and can update asynchronously. The "Open All" action can appear not to expand immediately.
+The outer section-row button in Layers (labeled "Collapse [Name]" or "Expand [Name]") does NOT toggle the tree expand/collapse state when clicked. It opens the section's settings panel.
 
-Do not rely on Layers for targeted editing until a dedicated verification session confirms:
+To toggle a section's expand/collapse state, the inner "Collapse"/"Expand" sub-button (child of the section row) must be targeted specifically.
 
-- Stable expanded/collapsed state detection.
-- Reliable element selection from the Layers tree.
-- Reliable panel scoping when another settings panel is also open.
-- Safe recovery if expansion state does not change as expected.
+This is a non-obvious dual-click-target design. Browser automation that targets the outer section button intending to collapse will instead open the settings panel.
 
-Wireframe View panel contents remain UNKNOWN.
+**Rule:** Always target the inner toggle sub-button for tree navigation. Use the outer button only when the intent is to open section settings.
 
 ---
 
@@ -417,11 +532,15 @@ The `home` page uses Divi 4 shortcodes. Divi 5 features that are not available i
 
 ---
 
-### 3.6 Section Type Breakdown Unknown
+### 3.6 Specialty Section Column-Inner Controls — Partially Verified
 
-**Status:** UNKNOWN — not inspected during 2026-05-18 session
+**Status:** PARTIALLY VERIFIED — 2026-05-18 (layers-view-001 verification session)
 
-Three section types exist in Divi: Regular, Fullwidth, and Specialty. Which types are present on the `home` page was not determined. Specialty sections have column-inner structures that may expose different or restricted controls compared to Regular sections.
+Section type breakdown on the home page is now fully verified via Layers View (see §1.13). The Stats section is a Specialty Section containing both Module Columns (direct module holders) and Row Columns (containing Inner Rows and Inner Columns).
+
+The Layers tree exposes Inner Row and Inner Column nodes as distinctly labeled elements. Their settings panels have not been opened in a read-only session; it is expected that they expose Row-level and Column-level settings respectively, but this has not been confirmed locally.
+
+**Remaining unknown:** Whether Inner Row and Inner Column settings panels expose the same controls as top-level Row and Column settings (e.g., spacing, sizing). This requires a separate verification pass.
 
 ---
 
@@ -463,26 +582,27 @@ These restrictions exist regardless of whether the target environment is local, 
 
 The following capabilities have not been verified and must not be treated as operational knowledge until confirmed with a live session and a date stamp.
 
+**Resolved in layers-view-001 session (2026-05-18):** Layers panel full targeting reliability, Layers expansion timing and selectors, Specialty section column types on home page, breadcrumbs in settings panel. These are now VERIFIED — see §1.10, §1.11, §1.12, §1.13.
+
 | Capability | Why It Matters |
 |------------|---------------|
 | Canvas hover-to-select interaction | Hover-injected controls are verified, but reliable target selection/editing is not |
-| Layers panel full targeting reliability | Async state and multi-panel coexistence are verified; stable operational targeting still needs verification |
 | Wireframe View internal structure | Whether Wireframe View is useful for structural inspection |
 | Save Dropdown sub-options | What options exist and whether any are safe to use |
 | Tablet canvas width | What responsive canvas width Divi uses at Tablet breakpoint |
 | Phone canvas width | What responsive canvas width Divi uses at Phone breakpoint |
-| Specialty section column-inner controls | Whether column-inner settings are exposed consistently in Specialty sections |
+| Inner Row / Inner Column settings panel controls | Whether settings panels for Row-Inner and Column-Inner expose the same controls as top-level Row/Column |
 | Responsive controls for non-spacing fields | Whether the per-field hover toggle exists for fields beyond Spacing/Margin |
-| Module settings consistency across module types | Whether Content/Design/Advanced group names match for Text, Button, Blurb, Image, etc. |
+| Module settings consistency across module types | Whether Content/Design/Advanced group names match for Text, Button, Blurb, Image, Person, Slider, etc. |
 | Undo / history workflow | Whether Divi Builder has a reliable undo path and how many steps it supports |
 | Codex/browser automation interaction reliability | Which UI affordances Playwright or Codex can reliably interact with via automation |
-| Layers expansion timing and selectors | How to detect expanded/collapsed state reliably after "Open All" or per-node expansion |
-| Additional multi-panel combinations | Which panel combinations can coexist beyond Layers plus Section settings |
+| Additional multi-panel combinations | Which panel combinations can coexist beyond the observed cases |
 | Global section / global module behaviour | Visual indicators and sync behaviour (Divi Library currently empty — no globals to test) |
 | Divi 5 Migrator outcome | What the page structure looks like after migration from Divi 4 to Divi 5 format |
 | Front-end admin bar "Edit With Divi" nonce expiry | How long the nonce stays valid |
 | Section duplication workflow | What UI controls exist and whether duplication is reliable |
 | Divi portability (import/export) | What is exposed in the builder for per-page or per-section export |
+| Breadcrumb level click — navigate up hierarchy | Clicking a breadcrumb level to navigate to parent settings was not tested in read-only sessions |
 
 ---
 
@@ -490,24 +610,26 @@ The following capabilities have not been verified and must not be treated as ope
 
 The following should be verified during dedicated live browser sessions. Each verified item should be moved to §1 (Verified Interactions) with a date and method.
 
+**Completed in layers-view-001 session (2026-05-18):** Layers panel targeting reliability, element type labels, Specialty Section identification, breadcrumbs, canvas auto-scroll, Inner Row/Inner Column label visibility.
+
 ### High Priority
 
 - **Canvas element selection** — verify whether hover-to-select is reliable or always requires right-panel targeting.
-- **Layers panel targeting reliability** — verify expanded/collapsed state detection, element selection, and safe panel scoping after asynchronous updates.
 - **Wireframe View contents** — open the panel and document what structural blocks are shown.
 - **Tablet and Phone canvas widths** — record the actual pixel values from the width input field.
 - **Save Dropdown sub-options** — open and document all options before any are used.
+- **Inner Row / Inner Column settings panels** — open settings for an Inner Row and Inner Column in the Stats Specialty Section; confirm which controls are exposed.
 
 ### Medium Priority
 
 - **Undo/history workflow** — determine how many undo steps are available and whether they are reliable.
 - **Section duplication** — verify the UI controls and whether the duplicated section is an independent copy.
 - **Responsive controls on non-spacing fields** — confirm that the hover toggle exists for font size, padding, and other common Design fields.
-- **Module settings for Text, Button, Blurb modules** — verify Content/Design/Advanced group names for commonly used module types.
+- **Module settings for Text, Button, Blurb, Person, Slider modules** — verify Content/Design/Advanced group names for commonly used module types beyond Heading.
+- **Breadcrumb click navigation** — click a breadcrumb level (e.g., "Section") to navigate up and confirm the parent settings panel opens correctly.
 
 ### Lower Priority
 
-- **Specialty section column-inner controls** — relevant if any Specialty sections are found on the home page.
 - **Divi Library save workflow** — verify how to save a section/row/module to the library and whether it becomes globally editable.
 - **Preset editing workflow** — verify what presets exist and how they are edited (currently no presets confirmed).
 - **Global variable editing** — verify global variable panel location and whether changes propagate as expected.

@@ -31,52 +31,46 @@ The Divi layout summarizer foundation is also in place. `cases/spacing-and-paddi
 
 ## Recommended Next Task
 
-Pause further Divi Builder execution tests and browser control.
+The **Layers View verification session (layers-view-001)** is complete. All 8 verification questions returned VERIFIED. `operator/divi-builder-capabilities.md` has been updated with new entries §1.10–§1.14.
 
-The latest read-only verification session has been documented. Future Divi browser automation must be state-aware: act, wait, verify state changed, re-query UI, then continue or stop. Do not treat click success as task success.
-
-Official Divi 5 source ingestion context:
-
-- Read `resources/external-sources/elegant-themes-index.md`.
-- Follow `resources/external-sources/divi-5-builder-learning-plan.md`.
-- Stage 1 Builder interface summary is complete: `resources/external-sources/summaries/stage-1-builder-interface.md`.
-- Stage 2 responsive system summary is complete: `resources/external-sources/summaries/stage-2-responsive-system.md`.
-- Stage 3 navigation and traversal summary is complete: `resources/external-sources/summaries/stage-3-navigation-and-traversal.md`.
-- Stage 4 presets and global systems summary is complete: `resources/external-sources/summaries/stage-4-presets-and-global-systems.md`.
-- Stage 5 operator mapping is complete: `resources/external-sources/summaries/stage-5-operator-mapping.md`.
-- `operator/safety-rules.md` updated: Implementation Execution Order now includes structure-first navigation step (step 4) and style-source confirmation step (step 5).
-- `operator/browser-automation.md` updated: Required Workflow now includes structure-first navigation step (step 6) and style-source confirmation step (step 7).
-
-The staged official learning plan (Stages 1–5) is complete. The operator is now equipped with official-doc-backed conceptual knowledge for interface, responsive, navigation, presets/global systems, and operator mapping.
-
-The next browser session, when explicitly resumed, should remain a **narrow, read-only verification pass** against the LocalWP site targeting unresolved Priority 1 and Priority 2 items from `resources/external-sources/summaries/stage-5-operator-mapping.md` §8:
+**Remaining Priority 1 items from `stage-5-operator-mapping.md` §8 — still unverified:**
 
 1. Style Inspector access and read-only behaviour.
-2. Layers View structural tree.
-3. Wireframe View structural blocks.
-4. Breadcrumb behaviour in settings panel.
-5. Responsive Editor panel for a low-risk field.
-6. Tablet and Phone canvas widths.
+2. Wireframe View structural blocks.
+3. Responsive Editor panel for a low-risk field (Tablet and Phone canvas widths).
 
-No edits during that session. Each verified item should be recorded in `operator/divi-builder-capabilities.md` with date, method, and caveats.
+The next browser session should target **one of these three items** as a narrow, read-only verification pass. Each verified item should be recorded in `operator/divi-builder-capabilities.md` with date, method, and caveats.
 
 Before executing any Divi Builder interaction, check `operator/divi-builder-capabilities.md` first. All VERIFIED capabilities are documented there with date and method. UNKNOWN and OFFICIAL-DOC-BACKED capabilities must be locally verified before being used as a basis for execution.
 
-Current locally VERIFIED browser automation behaviours from the 2026-05-18 read-only verification session:
+Official Divi 5 source ingestion (Stages 1–5) is complete. The staged learning plan is fully done.
+
+Do not continue `cases/spacing-and-padding/`/CASE-001 until Priority 1 verification targets are complete.
+
+---
+
+## Locally VERIFIED Browser Automation Behaviours (as of layers-view-001)
 
 - Canvas content lives inside iframe `#et-vb-app-frame`.
 - Canvas hover controls may be absent from DOM-at-rest and dynamically injected after hover/mouseover.
-- Layers "Open All" can appear not to expand immediately; Layers state may update asynchronously and requires visible state verification.
-- Multiple Builder panels can coexist, including Layers plus Section settings.
+- Layers "Open All" expands the full tree synchronously (in layers-view-001); prior session showed asynchronous behaviour — always wait and verify via re-query.
+- Multiple Builder panels can coexist, including Layers plus settings panels.
+- **Layers panel is VERIFIED as the preferred structure-first traversal method.** See §1.10–§1.14 in `operator/divi-builder-capabilities.md`.
+- Outer section-row button in Layers opens settings — inner toggle sub-button toggles expand/collapse.
+- Stats section is a Specialty Section — confirmed via Layers tree structure and breadcrumb.
+- Breadcrumbs in settings panel show full parent chain (Page → Section → Column → Module).
+- Canvas auto-scrolls to the element selected from Layers.
 
-Unknowns left unresolved:
+---
 
-- Stable timing/selectors for Layers expanded/collapsed state.
-- Whether Layers tree targeting is reliable for safe element selection.
-- Wireframe View internal structure and targeting value.
-- Which panel combinations can coexist beyond the observed Layers plus Section settings case.
+## Remaining Unknowns (after layers-view-001)
 
-Only after the staged learning plan is complete should controlled LocalWP execution tests resume. Do not automate Divi directly yet. Do not continue `cases/spacing-and-padding/`/CASE-001 until explicitly re-approved.
+- Style Inspector access and read-only behaviour.
+- Wireframe View internal structure.
+- Tablet and Phone canvas widths.
+- Inner Row / Inner Column settings panel controls.
+- Save Dropdown sub-options.
+- Canvas hover-to-select reliability.
 
 ---
 

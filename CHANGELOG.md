@@ -6,6 +6,34 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 15)
+
+Completed Layers View verification session (layers-view-001) — all 8 questions VERIFIED:
+
+- **Q1 VERIFIED:** Layers View opens reliably via `.et-vb-builder-bar-button--divi-layers` click. Sections panel appears with Search Layout, Open All, and all 9 section nodes.
+- **Q2 VERIFIED:** "Open All" expands the full tree synchronously in one operation; button label changes to "Close All" when complete. State-aware wait/re-query still required (prior session showed asynchronous behaviour).
+- **Q3 VERIFIED (with targeting caveat):** Individual sections expand/collapse reliably — but only via the **inner** toggle sub-button. The outer section-row button opens the section settings panel instead of toggling tree state. This is a non-obvious dual-click-target design; automation must target the inner button.
+- **Q4–Q6 VERIFIED:** Clicking a module in Layers selects it, opens the correct settings panel (panel heading changes to element type name), and confirms hierarchy via breadcrumb (Page → Section → Column → Heading). Canvas auto-scrolls to the selected element.
+- **Q7 VERIFIED — all 7 element types:** Section, Row, Column, Module (all labeled by module type name), Specialty Section (identified structurally — Column directly under Section), Row-Inner ("Collapse Inner Row"), Column-Inner ("Collapse Inner Column").
+- **Q8 VERIFIED:** Layers View is the preferred structure-first traversal method. Operates in Builder UI frame (no iframe hover simulation needed). Exposes full hierarchy without canvas ambiguity.
+
+Additional findings from layers-view-001:
+
+- **Specialty Section confirmed:** Stats section is a Specialty Section — first Specialty Section identified on this site. Full structure mapped (Module Column → Heading; Row Column → Inner Row → Inner Columns → Number Counter modules).
+- **Breadcrumbs VERIFIED:** Settings panel shows full parent chain as clickable buttons. Previously UNKNOWN. Breadcrumb confirmed for Stats Specialty Section: Page → Section → Column → Heading.
+- **Home page structure fully mapped:** 8 Regular sections, 1 Specialty section (Stats), 0 Fullwidth sections. Full module inventory captured in `cases/verification-sessions/layers-view-001/session.md`.
+- **New module types confirmed:** Person module (Team section). Accordion Items and Slider Slides visible as Layers child nodes.
+- **Canvas auto-scroll confirmed:** Selecting an element from Layers scrolls canvas to that element.
+
+Updated files:
+
+- Created `cases/verification-sessions/layers-view-001/session.md` — full session record with findings, evidence table, home page structure map, screenshots index.
+- Updated `operator/divi-builder-capabilities.md` — added §1.10 (Layers full targeting), §1.11 (element type labels), §1.12 (breadcrumbs), §1.13 (Specialty Section confirmed), §1.14 (multi-panel coexistence, renumbered). Updated §3.4, §3.6. Removed resolved items from §5 and §6.
+- Updated `HANDOFF.md` — updated current objective, verified behaviour list, remaining unknowns.
+- Updated `STATE.md` — updated verified findings and next recommended step.
+
+---
+
 ## 2026-05-18 (Pass 14)
 
 Documented state-aware Divi browser automation rules from the read-only verification session:

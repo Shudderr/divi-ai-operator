@@ -121,8 +121,12 @@ The latest read-only Divi Builder verification findings have been added to the o
 - Browser automation must follow: act, wait, verify state changed, re-query UI, continue or stop.
 - Canvas content is separated into iframe `#et-vb-app-frame`.
 - Canvas hover controls can be absent from DOM-at-rest and injected after hover/mouseover.
-- Layers "Open All" can appear not to expand immediately; Layers state may update asynchronously.
-- Multiple Builder panels can coexist, including Layers plus Section settings.
+- Layers panel is now VERIFIED as a reliable, preferred traversal method (layers-view-001 session).
+- All 7 element types (Section, Row, Column, Module, Specialty Section, Row-Inner, Column-Inner) identifiable via Layers.
+- Stats section confirmed as a Specialty Section — first Specialty Section identified on this site.
+- Breadcrumbs in settings panel are now VERIFIED (previously UNKNOWN).
+- Outer section-row click in Layers opens settings; inner toggle sub-button controls expand/collapse.
+- Multiple Builder panels can coexist, including Layers plus Section or Module settings.
 
 ---
 
@@ -188,10 +192,11 @@ The official Divi 5 learning plan (Stages 1–5) is complete.
 
 Next:
 
-- Pause further browser control until explicitly resumed.
-- Resume controlled LocalWP execution only as a **read-only verification pass**.
-- Verify unresolved Priority 1 targets from `stage-5-operator-mapping.md` §8: Style Inspector, Wireframe View, breadcrumbs, Responsive Editor, Tablet/Phone canvas widths, and remaining Layers reliability details.
+- Layers View verification session (layers-view-001) is complete. All 8 questions VERIFIED.
+- Remaining Priority 1 targets from `stage-5-operator-mapping.md` §8: Style Inspector, Wireframe View, Tablet/Phone canvas widths.
+- Breadcrumbs are now VERIFIED (resolved from Priority 1 list).
+- Each next verification session should target one item at a time as a narrow read-only pass.
 - Record each verified item in `operator/divi-builder-capabilities.md` with date, method, and caveats.
-- Do not resume CASE-001 editing until Priority 1 and Priority 2 verification targets are complete.
+- Do not resume CASE-001 editing until Priority 1 verification targets are complete.
 
 Do not restructure existing KB folders.
