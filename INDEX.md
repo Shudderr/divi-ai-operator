@@ -27,6 +27,7 @@
 | **[task-routing.md](./operator/task-routing.md)** | Route common request types to existing KB docs |
 | **[browser-automation.md](./operator/browser-automation.md)** | Codex/Chrome/browser automation governance |
 | **[memory.md](./operator/memory.md)** | Living operational memory and lessons learned |
+| **[wp-divi-ui-map.md](./operator/wp-divi-ui-map.md)** | Live-surveyed WordPress + Divi UI operator map — where everything lives, how to reach it, what not to touch |
 
 ---
 

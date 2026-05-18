@@ -27,6 +27,18 @@ Read:
 
 ---
 
+## UI Navigation ("Where Is X?")
+
+Use when a task requires knowing which WP admin page or Divi UI panel to use, or when browser-automation needs a precise path.
+
+Read:
+
+- `operator/wp-divi-ui-map.md`
+
+Covers: WordPress admin navigation, Pages list, Divi Visual Builder zones, module settings modal tabs, responsive controls, Global Variables, Preset Manager, Theme Builder, Theme Options tabs, Menus, Widgets, and safety rules per area.
+
+---
+
 ## New Project
 
 Use for starting a new WordPress/Divi site or preparing a client build.
