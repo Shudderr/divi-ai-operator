@@ -51,6 +51,7 @@ In the Visual Builder:
 - Hover over an element on the canvas to select it. **[not verified — canvas interaction was not performed during discovery]**
 - Use the **Layers panel** (Builder Bar → button with class `et-vb-builder-bar-button--divi-layers`) to find elements by structure. The Layers button was confirmed present; its panel contents were not opened during discovery.
 - Use **Wireframe View** (Builder Bar → button with class `et-vb-builder-bar-button--divi-wireframe-view`) to view structural blocks. Button was confirmed present; panel was not opened.
+- **Most reliable targeting method (verified 2026-05-18):** Use the right-panel element tree — Section → Row → Column → Module — clicking the pencil icon at each level to drill down. Clicking canvas overlays directly tends to select the wrong element level. Verified on the home page: hero section → 4-column row → "Rent A Home" Heading module.
 
 The `home` page canvas iframe contains **9 sections** and **15 rows** (verified via DOM query). Module types present (verified via `et_pb_*` CSS classes): Heading, Icon, Text, Number Counter, Image, Button, Blurb, Accordion.
 
@@ -62,7 +63,7 @@ In the element settings modal, three tabs are present (verified from the open Pa
 - **Design** — colors, typography, spacing (padding/margin), borders, shadows, sizing
 - **Advanced** — CSS ID, CSS classes, custom CSS per sub-element, animations, visibility
 
-The Content/Design/Advanced tab structure was confirmed for the Page Settings modal. Module-specific modal contents were not individually opened during discovery.
+The Content/Design/Advanced tab structure was confirmed for the Page Settings modal and verified for a Heading module (2026-05-18). Content groups: Text, Link, Elements, Background, Loop, Meta. Design groups: Layout, Text, Heading Text, Sizing, Spacing, Border, Box Shadow, Filters, Transform, Animation. Advanced groups: Attributes, CSS, HTML, Conditions, Interactions, Visibility, Transitions, Position, Scroll Effects.
 
 #### Step 6 — Save
 
@@ -126,7 +127,7 @@ Three breakpoint buttons confirmed present:
 
 A **custom width input** field was present and showed `1580px` on desktop. A **zoom input** field was also present and showed `100%`.
 
-**Per-element responsive icons in settings fields:** Not verified — field-level interactions were not performed during discovery.
+**Per-element responsive icons in settings fields:** Verified 2026-05-18. In the Heading module Design tab, hovering the Margin row inside Spacing reveals three inline icons beside the field label: info (ⓘ), a responsive/breakpoint toggle, and an overflow menu (⋮). The breakpoint toggle is the per-field responsive control.
 
 **Testing order:** Desktop → Tablet → Phone. Check for horizontal overflow at Phone width.
 
