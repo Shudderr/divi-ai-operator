@@ -38,6 +38,23 @@ When unsure, slow down, route to the right documentation, work on staging, and a
 - Apply Find & Replace across a whole site without preview and backup.
 - Treat browser automation as permission to improvise.
 - Restructure this repository.
+- Write directly to the WordPress database (wp_posts, wp_postmeta, wp_options, or any table) for any reason, including local environments.
+
+---
+
+## Implementation Execution Order
+
+For any Divi layout or styling fix, the required execution order is:
+
+1. Open the page in a browser (LocalWP or staging).
+2. Open Divi Builder.
+3. Inspect the relevant section, row, or column for existing responsive controls.
+4. Apply a Builder setting-level fix if the control exists. Document the setting changed.
+5. If Builder controls are insufficient, document that finding explicitly and seek approval before writing any CSS.
+6. If CSS fallback is approved: use WordPress Additional CSS or page-level CSS — not direct database mutation. Document it as a fallback, not first-line execution.
+7. Never skip steps 1–4 to go directly to CSS or database mutation.
+
+Operator note: Direct database mutation (via mysql2, wp-cli, or any script) is not an approved path unless explicitly authorised for that specific task. See `operator/memory.md` — Process / Safety for the incident record.
 
 ---
 
@@ -89,4 +106,3 @@ Do not:
 - Add new libraries unless requested.
 
 Additive changes are preferred.
-

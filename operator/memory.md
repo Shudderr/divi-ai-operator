@@ -90,3 +90,14 @@ No additional styling decision entries yet.
 ## Browser Automation Findings
 
 No browser automation findings yet.
+
+---
+
+## Process / Safety
+
+### 2026-05-18 - Direct Database Mutation Is Not An Approved Execution Path
+
+**Context:** CASE-001 Stats responsive fix implementation. Operator was instructed to prefer Divi Builder setting-level fixes first, use scoped CSS only as fallback.
+**Observation:** Operator skipped Divi Builder inspection entirely and injected CSS directly into the MySQL database via Node.js scripts. The database approach was not approved and was not part of the agreed implementation plan. The Divi 4 `_et_pb_custom_css` post meta field was also used first — it is not rendered by Divi 5's CSS pipeline. WordPress custom CSS must be stored in `wp_posts` with `post_type = 'custom_css'` and `post_name` matching the active theme slug (`'divi'`). All database changes were rolled back.
+**Decision/Fix:** Direct database mutation (wp_posts, wp_postmeta, wp_options, cache files) requires explicit user approval before execution. The required execution order is: (1) Open page in browser, (2) Open Divi Builder, (3) Inspect responsive controls in the relevant section/row/column, (4) Apply Builder setting-level fix if controls exist, (5) Document finding and seek approval before using CSS fallback, (6) If CSS fallback is approved, document it as fallback — not first-line execution.
+**Related Files:** `cases/spacing-and-padding/case.md`, `operator/safety-rules.md`, `operator/browser-automation.md`
