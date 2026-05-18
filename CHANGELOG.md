@@ -6,6 +6,23 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 3)
+
+Added the `cases/` case testing foundation:
+
+- `cases/README.md` — defines the case system purpose, LocalWP testing workflow, asset preference (JSON exports first), case lifecycle, connection to the operator system, browser automation positioning, AI readiness gate, and AI evaluation use.
+- `cases/case-template.md` — reusable case structure covering: Case ID, Status, Problem Summary, Environment, Symptoms, Expected Behaviour, Related Assets, KB Docs To Consult, Safety Considerations, Operator Analysis, Proposed Fix, QA Checklist, Outcome, Lessons Learned, and a candidate `operator/memory.md` entry.
+- `cases/example-case/case.md` — a completed demonstration case (hero section mobile overflow) showing the template in use with real KB routing, safety notes, operator analysis, QA checklist, and a candidate memory entry.
+- `cases/example-case/outcome.md` — the resolved outcome for the demonstration case.
+
+Updated `PROJECT.md` to add `cases/` as the fourth architecture layer (case testing layer) between the operator layer and the execution/browser layer.
+
+Updated `STATE.md` to include `cases/` in the current folder list and update the next recommended step.
+
+Updated `HANDOFF.md` to reflect the completed case foundation and the current recommended path forward.
+
+---
+
 ## 2026-05-18 (Pass 2)
 
 Added eight practical task examples to `operator/task-routing.md`:

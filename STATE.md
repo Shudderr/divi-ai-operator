@@ -28,6 +28,7 @@ Current root-level files:
 Current folders:
 
 - `operator/`
+- `cases/`
 - `audits/`
 - `build/`
 - `features/`
@@ -126,8 +127,10 @@ Do not perform broad cleanup without a focused scope and reviewable diff.
 
 ## Next Recommended Step
 
-The operator layer is now usable. `operator/task-routing.md` includes eight practical worked examples for the most common Divi task types.
+The case testing foundation is in place. The next steps are demand-driven:
 
-The next additions should be demand-driven: snippets, layouts, QA folders, or expanded memory notes as real work creates the need.
+- Create real cases in `cases/` as actual Divi issues are encountered on LocalWP.
+- Promote confirmed patterns from resolved cases into `operator/memory.md`.
+- Snippets, layouts, and QA folders remain deferred until there is a concrete need.
 
 Do not restructure existing KB folders.

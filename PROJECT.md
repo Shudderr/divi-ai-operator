@@ -70,7 +70,18 @@ The `operator/` folder provides detailed orchestration:
 - Browser automation boundaries.
 - Operational memory.
 
-### 4. Execution And Browser Layer
+### 4. Case Testing Layer
+
+The `cases/` folder provides reproducible Divi test cases for:
+
+- AI evaluation and operator reasoning practice.
+- LocalWP-based issue reproduction and resolution.
+- Troubleshooting memory inputs.
+- Future browser automation test targets.
+
+See `cases/README.md` for the full case system overview.
+
+### 5. Execution And Browser Layer
 
 Future browser/Codex/Chrome automation should be treated as an execution, QA, and repetitive-action layer.
 

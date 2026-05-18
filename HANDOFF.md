@@ -16,27 +16,24 @@ The immediate continuity/governance phase is complete, and the initial `operator
 
 ## Current Active Objective
 
-Use the operator layer as the executive system for AI-assisted work:
+Use the operator and case layers as the working system for AI-assisted Divi work:
 
-- Source priority.
-- Task routing.
-- Safety rules.
-- Browser automation boundaries.
+- Source priority and task routing.
+- Safety rules and browser automation boundaries.
 - Operational memory.
+- Reproducible Divi test cases via `cases/`.
 
-The `operator/task-routing.md` file now includes eight concrete worked examples that show the operator how to handle the most common Divi task types end-to-end.
+The operator layer is fully documented with eight task examples. The `cases/` system is now in place as the reproducible testing and AI evaluation layer.
 
 ---
 
 ## Recommended Next Task
 
-The operator layer is now usable for real work. The next meaningful additions would be:
+Create real cases in `cases/` as actual Divi issues are encountered on LocalWP. Each resolved case should be evaluated for a candidate `operator/memory.md` entry.
 
-- Snippets, layouts, or QA supporting libraries (when a concrete need arises).
-- Expanding `operator/memory.md` with real recurring issues as they are encountered.
-- Browser automation groundwork when that phase is ready.
+When operator reasoning and LocalWP workflows are proven stable, browser automation (Playwright MCP or equivalent) can be introduced as the execution layer against defined cases.
 
-Do not automate Divi directly yet.
+Do not automate Divi directly yet. Do not add snippets, layouts, or QA folders until there is a concrete need.
 
 ---
 
