@@ -6,6 +6,18 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 9)
+
+Added Stage 1 Divi Builder interface summary:
+
+- Created `resources/external-sources/summaries/stage-1-builder-interface.md` as the first official-doc-backed learning summary for the operator.
+- Summarised official Divi 5 Builder interface sources covering entry points, interface zones, top bar concepts, left sidebar tools, right settings panel behaviour, layout hierarchy, settings tabs, navigation candidates, views/modes, save/exit concepts, and operator terminology.
+- Captured operator implications, do/don't rules, unknowns needing local verification, and candidate capability-matrix items clearly marked as official-doc-backed but not locally verified.
+- Updated `HANDOFF.md` and `STATE.md` to mark Stage 1 complete and point the next ingestion step at Stage 2 responsive system docs.
+- Did not update `operator/divi-builder-capabilities.md`; no new execution capability was locally verified.
+
+---
+
 ## 2026-05-18 (Pass 8)
 
 Added official Divi 5 reference source layer:
