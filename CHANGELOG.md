@@ -6,6 +6,16 @@ This file should track architectural decisions, governance additions, operator-l
 
 ---
 
+## 2026-05-18 (Pass 6)
+
+Validated the canonical Divi spacing case against the LocalWP page:
+
+- Added read-only viewport evidence for `cases/spacing-and-padding/` at widescreen, desktop, tablet, and mobile sizes.
+- Updated `case.md` with confirmed visual findings, summary-derived risks that remain unconfirmed, and a revised first safe implementation target.
+- Kept `outcome.md` pending because no fix was applied.
+
+---
+
 ## 2026-05-18 (Pass 5)
 
 Added the canonical Divi summarizer case:
